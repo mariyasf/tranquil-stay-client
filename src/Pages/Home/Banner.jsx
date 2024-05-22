@@ -1,4 +1,5 @@
 import { FaStar } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
     return (
@@ -22,9 +23,11 @@ const Banner = () => {
                         Tranquil Stay is a serene and luxurious hotel dedicated to providing our guests with an
                         unparalleled experience of relaxation and comfort.
                     </p>
-                    <button className="btn  btn-outline   border-white border-2 text-white font-bold
+                    <Link to={"/aboutUs"}>
+                        <button className="btn  btn-outline   border-white border-2 text-white font-bold
                  hover:bg-[#86653d] hover:border-none text-xl">Learn More</button>
 
+                    </Link>
                 </div>
                 <div className="absolute bottom-0 top-[600px]  ">
                     <form action="">

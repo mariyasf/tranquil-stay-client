@@ -3,7 +3,7 @@ import { FaStar } from "react-icons/fa";
 const Banner = () => {
     return (
         <div className="">
-            <div className="custom-bg relative min-h-screen max-h-full 
+            <div className="custom-bg relative min-h-screen max-h-full mt-32
             bg-cover bg-center flex flex-col items-center">
 
                 <div className="text-center text-white py-20 space-y-10">

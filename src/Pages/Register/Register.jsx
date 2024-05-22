@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import { IoEye, IoEyeOff } from "react-icons/io5";
-import UseAuth from "../../../Hooks/UseAuth";
 import 'react-toastify/dist/ReactToastify.css';
+import UseAuth from "../../Hooks/UseAuth";
 
 const Register = () => {
     document.title = 'Register'

@@ -3,7 +3,7 @@
 const Footer = () => {
     return (
         <>
-            <footer className="footer p-20 bg-[#c09d73]
+            <footer className="footer p-20 bg-[#d8ad5d]
              text-white text-xl font-Poppins">
                 <aside>
                     <img src="/logo2.png" className="w-24 h-24" alt="" />
@@ -31,7 +31,7 @@ const Footer = () => {
                 </nav>
             </footer>
 
-            <footer className="footer items-center p-5 text-xl  text-[#c09d73]">
+            <footer className="footer items-center p-5 text-xl  text-[#d8ad5d]">
                 <aside className="items-center grid-flow-col">
                     <p>Copyright © 2024 - All right reserved mariyasf</p>
                 </aside>

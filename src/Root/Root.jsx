@@ -5,8 +5,10 @@ import Footer from '../Pages/Error/Shared/Footer';
 
 const Root = () => {
     return (
-        <div>
-            <Navbar />
+        <div >
+            <div className="bg-[url('/Images/b.jpg')] bg-no-repeat bg-cover">
+                <Navbar />
+            </div>
             <Outlet />
             <Footer />
         </div>

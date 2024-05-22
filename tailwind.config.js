@@ -8,7 +8,8 @@ export default {
     extend: {
       fontFamily: {
         Rancho: '"Rancho", cursive;',
-        Poppins: '"Poppins", sans- serif'
+        Poppins: '"Poppins", sans- serif',
+        Cormorrant: '"Cormorant Garamond", serif'
       }
 
     },

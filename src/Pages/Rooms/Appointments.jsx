@@ -1,4 +1,5 @@
 import { FaCheckCircle, FaUsers } from "react-icons/fa";
+import { FaPersonWalkingLuggage } from "react-icons/fa6";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import { MdRoomService } from "react-icons/md";
 
@@ -11,17 +12,17 @@ const Appointments = () => {
                 <h2 className="text-8xl font-Rancho font-bold text-center pt-5">Book A Room</h2>
             </div>
 
-            <div className="flex flex-col lg:flex-row gap-20 w-[1240px]
-             mx-auto mt-10 h-[500px]">
+            <div className="flex flex-col lg:flex-row gap-20 max-w-[1240px]
+             mx-auto mt-10  ">
 
-                <div className="flex-1 border rounded-lg border-[#c09d73] p-10">
+                <div className="flex-1 border rounded-lg border-[#c09d73] p-10 mx-5">
 
                     <form className="flex-1 bg-transparent mt-30 px-5 space-y-5 lg:space-y-20 items-center">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-2 gap-5">
+                        <div className="grid grid-cols-1 gap-5 ">
                             <div >
                                 <div className="space-y-3">
                                     <label className="flex items-center gap-5">
-                                        <FaCheckCircle /> <span>Check In Date</span>
+                                        <FaCheckCircle /> <span className="font-bold">Check In Date</span>
                                     </label>
                                     <input className="p-4 border w-full" type="date" id="chackin2" name="date" />
                                 </div>
@@ -30,7 +31,7 @@ const Appointments = () => {
                                 <div className="space-y-3">
                                     <label className="flex items-center gap-5">
                                         <IoIosCloseCircleOutline />
-                                        <span>Check Out Date</span>
+                                        <span className="font-bold">Check Out Date</span>
                                     </label>
                                     <input className="p-4 border w-full" type="date" id="chackout2" name="date" />
                                 </div>
@@ -38,7 +39,7 @@ const Appointments = () => {
                             <div >
                                 <div className="space-y-3" >
                                     <label className="flex items-center gap-5">
-                                        <FaUsers /> <span>Adults</span>
+                                        <FaUsers /> <span className="font-bold">Adults</span>
                                     </label>
                                     <select className="p-4 border w-full" name="adults" id="adu2">
                                         <option value="sports-massage">Adults</option>
@@ -53,7 +54,7 @@ const Appointments = () => {
                             <div >
                                 <div className="space-y-3">
                                     <label className="flex items-center gap-5">
-                                        <MdRoomService /><span>Room</span>
+                                        <MdRoomService /><span className="font-bold">Room</span>
                                     </label>
                                     <select className="p-4 border w-full" name="room" id="rm2">
                                         <option value="sports-massage">Room</option>
@@ -62,6 +63,20 @@ const Appointments = () => {
                                         <option value="3">3</option>
                                         <option value="4">4</option>
                                         <option value="5">5</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div >
+                                <div className="space-y-3">
+                                    <label className="flex items-center gap-5">
+                                        <FaPersonWalkingLuggage /><span className="font-bold">Category</span>
+                                    </label>
+                                    <select className="p-4 border w-full" name="room" id="rm2">
+                                        <option value="sports-massage">Room</option>
+                                        <option value="1">Luxary Room</option>
+                                        <option value="2">Presidential Room</option>
+                                        <option value="3">Family Room</option>
+                                        <option value="4">Premier Room</option>
                                     </select>
                                 </div>
                             </div>

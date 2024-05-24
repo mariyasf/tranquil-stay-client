@@ -1,9 +1,10 @@
 import Swal from "sweetalert2";
 import Address from "../Address/Address";
 import { Helmet } from "react-helmet";
+import UseAuth from "../../Hooks/UseAuth";
 
 const CustomerFeedback = () => {
-    // document.title = 'Customer Feedback'
+    const { user } = UseAuth();
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -14,13 +15,15 @@ const CustomerFeedback = () => {
         const message = form.message.value;
         const title = form.title.value;
         const timestamp = new Date();
+        const imgUrl = user.photoURL;
 
         const newFeed = {
             name,
             email,
             message,
             title,
-            timestamp
+            timestamp,
+            imgUrl
         }
         console.log(newFeed)
 

@@ -9,6 +9,7 @@ import AboutUs from "../Pages/AbourUs/AboutUs";
 import CustomerFeedback from "../Pages/CustomerFeedback/CustomerFeedback";
 import PrivateRouter from "./PrivateRouter";
 import UserProfile from "../Components/UserProfile";
+import Rooms from "../Pages/Rooms/Rooms";
 
 const router = createBrowserRouter([
     {
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/rooms",
-                element: <Contact />,
+                element: <Rooms />,
             },
             {
                 path: "/myBookings",

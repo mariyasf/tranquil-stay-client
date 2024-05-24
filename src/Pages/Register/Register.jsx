@@ -57,7 +57,7 @@ const Register = () => {
 
                 const createdAt = result.user?.metadata?.creationTime;
                 const user = { name, email, createAt: createdAt };
-                fetch(`https://tranquil-stay-server.vercel.app/user`, {
+                fetch(`${import.meta.env.VITE_API_URL}/user`, {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -90,7 +90,7 @@ const Register = () => {
                 <div className="text-center lg:text-left">
                     <img src="/Images/lr.png" alt="" />
                 </div>
-                 
+
 
                 <div className="card shrink-0 w-full max-w-lg border  border-[#c09d73]">
                     <form className="card-body" onSubmit={handleRegister}>

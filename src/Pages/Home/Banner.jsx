@@ -29,12 +29,12 @@ const Banner = () => {
 
                     </Link>
                 </div>
-                <div className="absolute bottom-0 top-[600px]  ">
+                <div className="lg:absolute bottom-0 top-[600px]  ">
                     <form action="">
                         <div className=" bg-black border-t-4 border-t-[#d8ad5d] p-5
                 flex flex-col lg:flex-row justify-evenly items-center gap-5">
 
-                            <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 text-white justify-between">
+                            <div className="grid grid-cols-1 lg:grid-cols-4 gap-5 text-white justify-between">
                                 <div className="border-r p-5  ">
                                     <p className="font-Cormorrant text-xl">Check In</p>
                                     <input className="rounded-md bg-[#d8ad5d] p-5 w-full text-xl  text-[#000e0e]"

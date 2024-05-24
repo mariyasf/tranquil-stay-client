@@ -3,7 +3,7 @@ import CustomerFeedbackCard from '../../Components/CustomerFeedbackCard';
 import { useEffect, useState } from 'react';
 
 const Feedbacks = () => {
-    const url = 'https://tranquil-stay-server.vercel.app/feedback';
+    const url = `${import.meta.env.VITE_API_URL}/feedback`;
 
     const [reviews, setReviews] = useState([]);
 

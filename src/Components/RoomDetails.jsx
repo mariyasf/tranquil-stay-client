@@ -21,7 +21,6 @@ const RoomDetails = () => {
         specialOffers
     } = room || {}
 
-
     return (
         <div>
             <BannerCard

@@ -28,7 +28,7 @@ const CustomerFeedback = () => {
         console.log(newFeed)
 
 
-        fetch('https://tranquil-stay-server.vercel.app/feedback', {
+        fetch(`${import.meta.env.VITE_API_URL}/feedback`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

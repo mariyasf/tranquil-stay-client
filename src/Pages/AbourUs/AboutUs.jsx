@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { FaCar, FaSwimmingPool, FaWineBottle } from "react-icons/fa";
 import { IoMdFitness } from "react-icons/io";
 import { IoRestaurant } from "react-icons/io5";
@@ -9,6 +10,9 @@ import { Link } from "react-router-dom";
 const AboutUs = () => {
     return (
         <div className='pt-40 max-w-[1240px] mx-auto bg-transparent'>
+            <Helmet>
+                <title>About Us</title>
+            </Helmet>
             <div className="flex flex-col lg:flex-row gap-5">
                 <img src="/Images/b.jpg" alt="" />
                 <div className="space-y-5">

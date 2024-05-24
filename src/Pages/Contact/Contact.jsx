@@ -2,11 +2,16 @@ import { FaPhone, FaPhoneAlt } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import Address from "../Address/Address";
+import { Helmet } from "react-helmet";
 
 
 const Contact = () => {
     return (
         <>
+            <Helmet>
+                <title>Contact Us</title>
+            </Helmet>
+
             <div className="flex flex-col lg:flex-row gap-10 justify-between mb-10
          max-w-[1240px] mx-auto mt-40 p-10 lg:p-20 rounded-xl bg-[#f8f6f3]">
                 <div className="flex-1 font-Cormorrant space-y-5">

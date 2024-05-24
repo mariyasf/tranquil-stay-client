@@ -4,9 +4,10 @@ import { ToastContainer, toast } from "react-toastify";
 import { IoEye, IoEyeOff } from "react-icons/io5";
 import 'react-toastify/dist/ReactToastify.css';
 import UseAuth from "../../Hooks/UseAuth";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
-    document.title = 'Register'
+
     const { createNewUser, updateUserProfile } = UseAuth();
 
     const [showPass, setShowPass] = useState(false);
@@ -70,10 +71,7 @@ const Register = () => {
                             console.log('Register user')
                         }
                     })
-
-
                 e.target.reset();
-
 
             })
             .catch(error => {
@@ -83,12 +81,16 @@ const Register = () => {
     }
 
     return (
-        <div className="bg-[#f6f5f5]">
+        <div className="bg-[#f6f5f5] mt-32">
+            <Helmet>
+                <title>Registration</title>
+            </Helmet>
             <ToastContainer />
             <div className="hero-content flex-col lg:flex-row gap-10 py-20">
                 <div className="text-center lg:text-left">
                     <img src="/Images/lr.png" alt="" />
                 </div>
+                 
 
                 <div className="card shrink-0 w-full max-w-lg border  border-[#c09d73]">
                     <form className="card-body" onSubmit={handleRegister}>
@@ -146,12 +148,12 @@ const Register = () => {
                         </div>
 
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary uppercase">Register</button>
+                            <button className="btn bg-[#c09d73] uppercase text-white">Register</button>
                         </div>
                     </form>
 
                     <p className="text-center pb-4">
-                        Already have an account? Please  <Link to={'/login'} className=" text-blue-600 font-bold">Login</Link>
+                        Already have an account? Please  <Link to={'/login'} className=" text-[#c09d73] font-bold">Login</Link>
                     </p>
                 </div>
             </div>

@@ -6,7 +6,12 @@ const BannerCard = ({ title, path }) => {
     const pathSegments = path.split('/');
 
     const handleNavigation = (segmentIndex) => {
-        const newPath = '/' + pathSegments.slice(0, segmentIndex + 1).join('/');
+        let newPath = '/' + pathSegments.slice(0, segmentIndex + 1).join('/');
+        if (newPath === '/home') {
+            newPath = '/';
+        } else if (newPath.startsWith('/home/')) {
+            newPath = newPath.replace('/home', '');
+        }
         navigate(newPath);
     };
 
@@ -21,7 +26,7 @@ const BannerCard = ({ title, path }) => {
                             <span key={index}>
                                 <a
                                     onClick={() => handleNavigation(index)}
-                                    className="cursor-pointer hover:underline"
+                                    className="cursor-pointer hover:underline uppercase"
                                 >
                                     {segment}
                                 </a>

@@ -11,7 +11,7 @@ const Rooms = () => {
     return (
         <div className="">
             <BannerCard
-                path={"Home/Rooms"}
+                path={"home/rooms"}
                 title={"ROOMS & SUTTES"} />
 
             <RoomsCategories />

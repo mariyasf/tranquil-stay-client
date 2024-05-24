@@ -24,9 +24,9 @@ const RoomDetails = () => {
     return (
         <div>
             <BannerCard
-                path={"Home/Rooms/Room Details"}
+                path={"home/rooms/room-details"}
                 title={"ROOM DETAILS"} />
-            <div className="grid grid-cols-1 lg:grid-cols-3 max-w-[1240px] mx-auto gap-10 mb-10">
+            <div className="grid grid-cols-1 lg:grid-cols-3 max-w-[1240px] mx-auto  gap-5 mb-10">
                 <div className="col-span-2 font-Cormorrant ">
                     <div>
                         <SwipperImg roomImages={roomImages} />
@@ -91,8 +91,8 @@ const RoomDetails = () => {
 
 
                 </div>
-                <div>
-                    <div className="flex-1 border rounded-lg border-[#c09d73] mt-5 p-10 mx-10 lg:mx-0">
+                <div className="px-10">
+                    <div className="flex-1 w-full border rounded-lg border-[#c09d73] mt-5 p-10">
 
                         <form className="flex-1 bg-transparent space-y-5 lg:space-y-20 items-center">
                             <div className="grid grid-cols-1 gap-5 ">

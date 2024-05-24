@@ -38,8 +38,8 @@ const Navbar = () => {
             <details>
                 <summary>Rooms</summary>
                 <ul className="p-2 bg-[#000e0e]">
-                    <li> <NavLink to={'/addrooms'}>Add Rooms</NavLink> </li>
-                    <li> <NavLink to={'/rooms'}>Rooms Details</NavLink> </li>
+                    <li> <NavLink to={'/addrooms'}>Add</NavLink> </li>
+                    <li> <NavLink to={'/rooms'}>Rooms</NavLink> </li>
                 </ul>
             </details>
 

@@ -90,6 +90,7 @@ const Contact = () => {
                     </form>
                     <div id="status"></div>
                 </div>
+
             </div>
             <Address />
 

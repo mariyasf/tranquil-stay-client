@@ -6,13 +6,14 @@ import Feedbacks from "../CustomerFeedback/Feedbacks";
 
 
 const Home = () => {
+    
 
     return (
         <>
             <Helmet>
                 <title>Home</title>
             </Helmet>
-            <Banner />
+            <Banner  />
             <About />
              
             <Feedbacks />

@@ -36,7 +36,7 @@ const RoomsCategories = () => {
                     <div className='grid grid-cols-1 lg:grid-cols-3 gap-5 '>
                         {
                             filterRoomsByCategory('luxury suite').map(room => (
-                                <RoomsCard
+                                <RoomsCard 
                                     key={room._id}
                                     room={room}
                                 />

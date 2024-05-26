@@ -11,6 +11,7 @@ import PrivateRouter from "./PrivateRouter";
 import UserProfile from "../Components/UserProfile";
 import Rooms from "../Pages/Rooms/Rooms";
 import RoomDetails from "../Components/RoomDetails";
+import MyCart from "../Pages/MyBookingCart/MyCart";
 
 const router = createBrowserRouter([
     {
@@ -46,7 +47,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/myBookings",
-                element: <PrivateRouter>  </PrivateRouter>,
+                element: <PrivateRouter> <MyCart/>  </PrivateRouter>,
             },
             {
                 path: "/feedback",

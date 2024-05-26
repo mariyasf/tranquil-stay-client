@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
+import UseAnimation from "../Hooks/UseAnimation";
 
 
 const RoomsCard = ({ room }) => {
+    UseAnimation()
+
     console.log(room)
     const {
         _id,
@@ -18,7 +21,9 @@ const RoomsCard = ({ room }) => {
     console.log(img)
 
     return (
-        <div className="border-2  border-[#c09d73] rounded-lg shadow-md">
+        <div
+            data-aos="zoom-out"
+            className="border-2  border-[#c09d73] rounded-lg shadow-md">
             <div className="flex flex-col items-center justify-center w-full">
                 <div className="w-full h-64 bg-gray-300 bg-center bg-cover 
                 rounded-lg  "

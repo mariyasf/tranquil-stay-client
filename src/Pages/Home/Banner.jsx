@@ -1,13 +1,21 @@
 import { FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import UseAnimation from "../../Hooks/UseAnimation";
 
 const Banner = () => {
+    UseAnimation();
+
     return (
         <div className="">
-            <div className="custom-bg relative min-h-screen max-h-full mt-32
+            <div
+
+                className="custom-bg relative min-h-screen max-h-full mt-32
             bg-cover bg-center flex flex-col items-center">
 
-                <div className="text-center text-white py-20 space-y-10">
+                <div className="text-center text-white py-20 space-y-10"
+                    data-aos="zoom-out" data-aos-anchor-placement="top-center"
+                    
+                >
                     <p className="flex justify-center gap-2 text-center text-[#c09d73]">
                         <FaStar />
                         <FaStar />

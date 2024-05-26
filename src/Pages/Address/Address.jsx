@@ -3,11 +3,17 @@ import { FaFacebook, FaInstagramSquare, FaLinkedin, FaPhoneAlt } from 'react-ico
 import { FaLocationDot } from 'react-icons/fa6';
 import { MdEmail } from 'react-icons/md';
 import { NavLink } from 'react-router-dom';
+import UseAnimation from '../../Hooks/UseAnimation';
 
 const Address = () => {
+    UseAnimation();
+
     return (
         <div>
-            <div className='bg-[#d8ad5d] py-20 w-full'>
+            <div className='bg-[#d8ad5d] py-20 w-full'
+                data-aos="zoom-out"
+                data-aos-offset="500"
+            >
                 <iframe
                     className='w-full'
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d236153.2182662306!2d91.65422317734475!3d22.3576296099941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30acd8a64095dfd3%3A0x5015cc5bcb6905d9!2sChattogram!5e0!3m2!1sen!2sbd!4v1716388662876!5m2!1sen!2sbd"
@@ -23,8 +29,10 @@ const Address = () => {
 
             <div>
 
-                <div className='bg-[#011515] text-white flex flex-col lg:flex-row gap-10 px-10'>
-                    <div className='p-5 bg-[#000e0e] shadow-xl'>
+                <div
+                    className='bg-[#011515] text-white flex flex-col lg:flex-row gap-10 px-10'>
+                    <div  data-aos="zoom-out"
+                        className='p-5 bg-[#000e0e] shadow-xl'>
                         <h2 className='font-Cormorrant text-5xl font-bold'>Contact Info</h2>
                         <div className="flex items-center gap-5 pt-5 font-Cormorrant">
 
@@ -58,7 +66,7 @@ const Address = () => {
                             <FaLinkedin className='hover:text-[#d8ad5d]' />
                         </div>
                     </div>
-                    <div className='flex-1 pt-10'>
+                    <div data-aos="zoom-out" className='flex-1 pt-10'>
                         <div className='grid grid-cols-1 lg:grid-cols-3 gap-5  font-Cormorrant p-5'>
                             <div>
                                 <h2 className=' text-white text-2xl uppercase pb-10'>Useful Links</h2>

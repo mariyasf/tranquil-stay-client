@@ -14,8 +14,12 @@ const AboutUs = () => {
                 <title>About Us</title>
             </Helmet>
             <div className="flex flex-col lg:flex-row gap-5">
-                <img src="/Images/b.jpg" alt="" />
-                <div className="space-y-5">
+                <img src="/Images/b.jpg" alt=""
+                    data-aos="zoom-out"
+                />
+                <div className="space-y-5"
+                    data-aos="zoom-out"
+                >
                     <h2 className="font-Poppins text-xl italic text-[#d8ad5d]">
                         LUXURY HOTEL
                     </h2>
@@ -42,7 +46,10 @@ const AboutUs = () => {
                      font-Cormorrant pb-5 mb-10 w-[500px] mx-auto border-b-2 border-b-[#d8ad5d]">HOTEL’S FACILITIES</h2>
                 </div>
                 <div className="grid grid-cols-1 lg:grid-cols-3 lg:grid-rows-3 gap-5">
-                    <div className=" flex gap-5 p-5 rounded-xl border border-[#c09d73]">
+                    <div
+                        data-aos="zoom-out"
+
+                        className=" flex gap-5 p-5 rounded-xl border border-[#c09d73]">
                         <IoRestaurant className="text-8xl text-[#d8ad5d] font-bold" />
                         <div>
                             <h2 className="font-Cormorrant font-bold text-3xl">Restaurant</h2>
@@ -52,7 +59,8 @@ const AboutUs = () => {
 
                         </div>
                     </div>
-                    <div className=" flex gap-5 p-5 rounded-xl border border-[#c09d73]">
+                    <div data-aos="zoom-out"
+                        className=" flex gap-5 p-5 rounded-xl border border-[#c09d73]">
                         <FaSwimmingPool className="text-8xl text-[#d8ad5d] font-bold" />
                         <div>
                             <h2 className="font-Cormorrant font-bold text-3xl">Swimming Pool</h2>
@@ -62,7 +70,9 @@ const AboutUs = () => {
 
                         </div>
                     </div>
-                    <div className=" flex gap-5 p-5 rounded-xl border border-[#c09d73]">
+                    <div
+                        data-aos="zoom-out"
+                        className=" flex gap-5 p-5 rounded-xl border border-[#c09d73]">
                         <IoMdFitness className="text-8xl text-[#d8ad5d] font-bold" />
                         <div>
                             <h2 className="font-Cormorrant font-bold text-3xl">Fitness Area</h2>
@@ -72,7 +82,8 @@ const AboutUs = () => {
 
                         </div>
                     </div>
-                    <div className=" flex gap-5 p-5 rounded-xl border border-[#c09d73]">
+                    <div data-aos="zoom-out"
+                        className=" flex gap-5 p-5 rounded-xl border border-[#c09d73]">
                         <FaWineBottle className="text-8xl text-[#d8ad5d] font-bold" />
                         <div>
                             <h2 className="font-Cormorrant font-bold text-3xl">Mini Bar</h2>
@@ -82,7 +93,8 @@ const AboutUs = () => {
 
                         </div>
                     </div>
-                    <div className=" flex gap-5 p-5 rounded-xl border border-[#c09d73]">
+                    <div data-aos="zoom-out" className=" flex gap-5 p-5 rounded-xl border border-[#c09d73]">
+
                         <MdMeetingRoom className="text-8xl text-[#d8ad5d] font-bold" />
                         <div>
                             <h2 className="font-Cormorrant font-bold text-3xl">Meeting Room</h2>
@@ -92,7 +104,7 @@ const AboutUs = () => {
 
                         </div>
                     </div>
-                    <div className=" flex gap-5 p-5 rounded-xl border border-[#c09d73]">
+                    <div data-aos="zoom-out" className=" flex gap-5 p-5 rounded-xl border border-[#c09d73]">
                         <MdOutlineLocalLaundryService className="text-5xl text-[#d8ad5d] font-bold" />
                         <div>
                             <h2 className="font-Cormorrant font-bold text-3xl">Laundry Service</h2>
@@ -102,7 +114,7 @@ const AboutUs = () => {
 
                         </div>
                     </div>
-                    <div className=" flex gap-5 p-5 rounded-xl border border-[#c09d73]">
+                    <div data-aos="zoom-out" className=" flex gap-5 p-5 rounded-xl border border-[#c09d73]">
                         <PiTelevisionSimple className="text-8xl text-[#d8ad5d] font-bold" />
                         <div>
                             <h2 className="font-Cormorrant font-bold text-3xl">Satelite TV</h2>
@@ -112,7 +124,7 @@ const AboutUs = () => {
 
                         </div>
                     </div>
-                    <div className=" flex gap-5 p-5 rounded-xl border border-[#c09d73]">
+                    <div data-aos="zoom-out" className=" flex gap-5 p-5 rounded-xl border border-[#c09d73]">
                         <MdOutlineHealthAndSafety className="text-8xl text-[#d8ad5d] font-bold" />
                         <div>
                             <h2 className="font-Cormorrant font-bold text-3xl">Safe Box</h2>
@@ -122,7 +134,7 @@ const AboutUs = () => {
 
                         </div>
                     </div>
-                    <div className=" flex gap-5 p-5 rounded-xl border border-[#c09d73]">
+                    <div data-aos="zoom-out" className=" flex gap-5 p-5 rounded-xl border border-[#c09d73]">
                         <FaCar className="text-8xl text-[#d8ad5d] font-bold" />
                         <div>
                             <h2 className="font-Cormorrant font-bold text-3xl">Parking Area</h2>

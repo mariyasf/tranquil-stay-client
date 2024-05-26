@@ -10,8 +10,10 @@ import { CgGym } from "react-icons/cg";
 import axios from "axios";
 import Swal from "sweetalert2";
 import UseAuth from "../Hooks/UseAuth";
+import UseAnimation from "../Hooks/UseAnimation";
 
 const RoomDetails = () => {
+    UseAnimation()
     const { user } = UseAuth();
 
     const room = useLoaderData();
@@ -41,6 +43,7 @@ const RoomDetails = () => {
         const bookingPricePerNight = parseInt(pricePerNight);
         const email = user?.email
         const name = user?.displayName
+        const availability = false;
 
         const today = new Date().toISOString().split("T")[0];
 
@@ -55,7 +58,7 @@ const RoomDetails = () => {
         }
 
         const booking = {
-            email, name,
+            email, name, availability,
             bookingId,
             checkIn,
             checkOut,
@@ -78,11 +81,12 @@ const RoomDetails = () => {
                     title: "Do you want to confirm the booking?",
                     showCancelButton: true,
                     confirmButtonText: "Confirm",
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        Swal.fire("Confirm!", "", "success");
-                    }
-                });
+                })
+                    .then((result) => {
+                        if (result.isConfirmed) {
+                            Swal.fire("Confirm!", "", "success");
+                        }
+                    });
             }
         }
         catch (error) {
@@ -111,10 +115,10 @@ const RoomDetails = () => {
 
                     <div className="mx-10 lg:mx-0  space-y-5 ">
                         <h2 className="text-5xl font-bold">{roomTypes}</h2>
-                        <p className="text-2xl">{description}</p>
+                        <p data-aos="zoom-in" data-aos-delay="1200" className="text-2xl">{description}</p>
                     </div>
 
-                    <div className="flex flex-col lg:flex-row gap-5 justify-between mx-10 lg:mx-0 mt-5">
+                    <div data-aos="zoom-in" data-aos-delay="1200" className="flex flex-col lg:flex-row gap-5 justify-between mx-10 lg:mx-0 mt-5">
                         <div className="space-y-2">
                             <h2 className="flex gap-4 font-bold text-3xl items-center">
                                 <FaArrowCircleRight />
@@ -143,7 +147,7 @@ const RoomDetails = () => {
 
 
 
-                    <div className="space-y-4 mt-5 mx-10 lg:mx-0">
+                    <div data-aos="zoom-in" data-aos-delay="1200" className="space-y-4 mt-5 mx-10 lg:mx-0">
                         <h2 className="font-bold text-3xl">Childreen & Extra Beds</h2>
                         <p className="text-2xl">
                             For a hotel or accommodation service, providing features related to children and extra beds is essential to cater to the needs of families and larger groups.

@@ -23,7 +23,7 @@ const RoomsCategories = () => {
     };
 
     return (
-        <div className='max-w-[1240px] mx-auto my-10 px-5'>
+        <div className='max-w-[1240px] bg-white mx-auto my-10 px-5'>
             <Tabs>
                 <TabList>
                     <Tab>Luxury</Tab>

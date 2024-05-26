@@ -13,7 +13,7 @@ import './styles/styles.css';
 import { Pagination, Navigation } from 'swiper/modules';
 
 const SwipperImg = ({ roomImages }) => {
-    console.log(roomImages);
+    // console.log(roomImages);
 
     return (
         <div>

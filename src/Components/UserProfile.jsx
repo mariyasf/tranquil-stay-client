@@ -60,15 +60,15 @@ const UserProfile = () => {
                 <title>My Profile</title>
             </Helmet>
 
-            <div className="flex w-[1140px] gap-10 mt-32 mx-auto my-10">
-                <div className="flex-1 border-r-2 space-y-5 mt-10">
+            <div className="flex flex-col lg:flex-row max-w-[1140px] 
+            gap-10 mt-32 mx-auto my-10 bg-white">
+                <div className="flex-1 border-r-2 space-y-5 mt-10 text-center">
                     <img alt="Profile"
                         className="rounded-full w-32 h-32 mx-auto"
                         src={updateUserInfo && isValidURL(updateUserInfo.photoURL) ? updateUserInfo.photoURL : profile} />
 
                     <p >Name: {updateUserInfo?.displayName}</p>
                     <p >Email: {updateUserInfo?.email}</p>
-                    <p >Contact: {updateUserInfo?.phoneNumber}</p>
 
                 </div>
                 <div className='flex-1 mt-10'>

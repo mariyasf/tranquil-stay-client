@@ -7,8 +7,13 @@ import { FaArrowCircleLeft, FaArrowCircleRight, FaCheck, FaCheckCircle, FaUsers,
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import { PiTelevisionSimpleFill } from "react-icons/pi";
 import { CgGym } from "react-icons/cg";
+import axios from "axios";
+import Swal from "sweetalert2";
+import UseAuth from "../Hooks/UseAuth";
 
 const RoomDetails = () => {
+    const { user } = UseAuth();
+
     const room = useLoaderData();
     const {
         _id,
@@ -20,6 +25,71 @@ const RoomDetails = () => {
         roomImages,
         specialOffers
     } = room || {}
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const form = e.target;
+
+        const bookingId = _id;
+        const checkIn = form.checkIn.value;
+        const checkOut = form.checkOut.value;
+        const adults = parseInt(form.adults.value);
+        const child = parseInt(form.child.value)
+        const img = roomImages[0];
+        const bookingCategory = category;
+        const bookingRoomTypes = roomTypes;
+        const bookingPricePerNight = parseInt(pricePerNight);
+        const email = user?.email
+        const name = user?.displayName
+
+        const today = new Date().toISOString().split("T")[0];
+
+        if (checkIn < today) {
+            alert("Check-in date cannot be before today.");
+            return;
+        }
+
+        if (checkOut < checkIn) {
+            alert("Check-out date must be on or after the check-in date.");
+            return;
+        }
+
+        const booking = {
+            email, name,
+            bookingId,
+            checkIn,
+            checkOut,
+            child,
+            adults, img,
+            bookingCategory,
+            bookingRoomTypes,
+            bookingPricePerNight,
+        }
+
+        console.table(booking)
+
+        try {
+            const { data } = await axios.post(
+                `${import.meta.env.VITE_API_URL}/booking`,
+                booking)
+            console.log(data);
+            if (data.insertedId) {
+                Swal.fire({
+                    title: "Do you want to confirm the booking?",
+                    showCancelButton: true,
+                    confirmButtonText: "Confirm",
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire("Confirm!", "", "success");
+                    }
+                });
+            }
+        }
+        catch (error) {
+            console.log(error);
+        }
+
+    }
 
     return (
         <div>
@@ -34,9 +104,9 @@ const RoomDetails = () => {
                     <h2 className="text-[#d8ad5d] text-2xl uppercase mt-10 mx-10 lg:mx-0">{category}</h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 font-bold text-2xl  border-y-2 py-5 my-5 mx-10 lg:mx-0">
-                        <h2>Price: <span className="font-Poppins text-xl">{pricePerNight}</span>/Per Night</h2>
+                        <h2 className="">Price: <span className="font-Poppins text-xl bg-green-500 ">{pricePerNight}/Per Night</span></h2>
                         <h2>Size: <span className="font-Poppins text-xl">{roomSize}</span> /Room</h2>
-                        <h2>Special Offers: <span className="font-Poppins text-xl bg-green-500 px-4">{specialOffers}</span></h2>
+                        <h2>Special Offers: <span className="font-Poppins text-xl px-4">{specialOffers}</span></h2>
                     </div>
 
                     <div className="mx-10 lg:mx-0  space-y-5 ">
@@ -94,14 +164,18 @@ const RoomDetails = () => {
                 <div className="px-10">
                     <div className="flex-1 w-full border rounded-lg border-[#c09d73] mt-5 p-10">
 
-                        <form className="flex-1 bg-transparent space-y-5 lg:space-y-20 items-center">
+                        <form
+                            onSubmit={handleSubmit}
+                            className="flex-1 bg-transparent space-y-5 lg:space-y-20 items-center">
                             <div className="grid grid-cols-1 gap-5 ">
                                 <div >
                                     <div className="space-y-3">
                                         <label className="flex items-center gap-5">
                                             <FaCheckCircle /> <span className="font-bold">Check In Date</span>
                                         </label>
-                                        <input className="p-4 border w-full" type="date" id="chackin2" name="date" />
+                                        <input className="p-4 border w-full"
+                                            type="date" id="chackin2" required
+                                            name="checkIn" />
                                     </div>
                                 </div>
                                 <div >
@@ -110,7 +184,11 @@ const RoomDetails = () => {
                                             <IoIosCloseCircleOutline />
                                             <span className="font-bold">Check Out Date</span>
                                         </label>
-                                        <input className="p-4 border w-full" type="date" id="chackout2" name="date" />
+                                        <input
+                                            className="p-4 border w-full"
+                                            type="date" required
+                                            id="chackout2"
+                                            name="checkOut" />
                                     </div>
                                 </div>
                                 <div >
@@ -118,8 +196,9 @@ const RoomDetails = () => {
                                         <label className="flex items-center gap-5">
                                             <FaUsers /> <span className="font-bold">Child</span>
                                         </label>
-                                        <select className="p-4 border w-full" name="child" id="ch2">
-                                            <option value="sports-massage">Child</option>
+                                        <select className="p-4 border w-full" required name="child" id="ch2">
+
+                                            <option value="0">0</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
@@ -133,8 +212,9 @@ const RoomDetails = () => {
                                         <label className="flex items-center gap-5">
                                             <FaUsers /> <span className="font-bold">Adults</span>
                                         </label>
-                                        <select className="p-4 border w-full" name="adults" id="adu2">
-                                            <option value="sports-massage">Adults</option>
+                                        <select className="p-4 border w-full" required
+                                            name="adults" id="adu2">
+
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
@@ -152,7 +232,7 @@ const RoomDetails = () => {
                                 <input
                                     className="font-Cormorrant btn border-none w-full
                                  bg-[#d8ad5d] hover:bg-[#937131] text-white text-xl"
-                                    type="submit" value="Book Table Now" />
+                                    type="submit" value="Book Now" />
                             </div>
                         </form>
                     </div>

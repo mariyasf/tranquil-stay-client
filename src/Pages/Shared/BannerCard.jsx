@@ -17,11 +17,13 @@ const BannerCard = ({ title, path }) => {
 
     return (
         <div className="relative  ">
-            <div className="carousel-item w-full max-h-[850px]">
-                <img src="/Images/db.jpg" className="w-full" alt="Banner" />
-                <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50">
-                    <h2 className="font-Cormorrant text-8xl font-bold text-white">{title}</h2>
-                    <div className="font-Cormorrant text-3xl font-bold text-[#d8ad5d]">
+            <div className="carousel-item w-full  ">
+                <img src="/Images/db.jpg"
+                    className="w-full" alt="Banner" />
+                <div className="absolute inset-0 flex flex-col items-center
+                 justify-center bg-black bg-opacity-50">
+                    <h2 className="font-Cormorrant text-3xl lg:text-8xl font-bold text-white">{title}</h2>
+                    <div className="font-Cormorrant text-xl lg:text-3xl font-bold text-[#d8ad5d]">
                         {pathSegments.map((segment, index) => (
                             <span key={index}>
                                 <a

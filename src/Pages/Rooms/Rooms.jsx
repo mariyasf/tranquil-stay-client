@@ -1,6 +1,4 @@
 import BannerCard from "../Shared/BannerCard";
-import Appointments from "./Appointments";
-import { useLoaderData } from "react-router-dom";
 import RoomsCategories from "./RoomsCategories";
 
 
@@ -16,8 +14,6 @@ const Rooms = () => {
 
             <RoomsCategories />
 
-
-            <Appointments />
         </div>
     );
 };

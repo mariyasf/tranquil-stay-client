@@ -13,7 +13,9 @@ const MyCart = () => {
             .then(result => result.json())
             .then(data => {
                 // console.log(data);
-                setMyBooking(data);
+                const sortedBookings = data.sort((a, b) => new Date(a.checkIn) - new Date(b.checkIn));
+
+                setMyBooking(sortedBookings);
             })
 
     }, [user])
@@ -49,9 +51,6 @@ const MyCart = () => {
                                             <th scope="col" className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
                                                 Check Out
                                             </th>
-
-
-
 
                                             <th scope="col" className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
                                                 People

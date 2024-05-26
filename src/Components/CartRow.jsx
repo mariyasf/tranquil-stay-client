@@ -24,27 +24,39 @@ const CartRow = ({ booking, onDelete }) => {
 
     const handleDelete = async () => {
         try {
-            const response = await axios.delete(`${import.meta.env.VITE_API_URL}/booking/${booking._id}`);
-            if (response.status === 200) {
-                onDelete(booking._id);
+            const today = new Date();
+            const cancellationDate = new Date(checkIn);
+            cancellationDate.setDate(cancellationDate.getDate() - 1);
 
-                Swal.fire({
-                    title: "Cancel Booking!",
-                    text: "Do you want to cancel this booking?",
-                    icon: "warning",
-                    confirmButtonColor: "#3085d6",
-                    cancelButtonColor: "#d33",
-                    confirmButtonText: "Yes, cancel it!"
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        
-                        Swal.fire("Cancelled!", "Your booking has been cancelled.", "success");
-                    }
-                });
+            if (today < cancellationDate) {
+                const response = await axios.delete(`${import.meta.env.VITE_API_URL}/booking/${booking._id}`);
+                if (response.status === 200) {
+                    onDelete(booking._id);
 
+                    Swal.fire({
+                        title: "Cancel Booking!",
+                        text: "Do you want to cancel this booking?",
+                        icon: "warning",
+                        confirmButtonColor: "#3085d6",
+                        cancelButtonColor: "#d33",
+                        confirmButtonText: "Yes, cancel it!"
+                    }).then((result) => {
+                        if (result.isConfirmed) {
 
+                            Swal.fire("Cancelled!", "Your booking has been cancelled.", "success");
+                        }
+                    });
 
+                }
             }
+            else {
+                Swal.fire({
+                    title: "Cannot Cancel Booking",
+                    text: "It's too late to cancel this booking. You can only cancel up to one day before the check-in date.",
+                    icon: "error",
+                });
+            }
+
         } catch (error) {
             console.error("There was an error deleting the booking!", error);
         }
@@ -92,9 +104,11 @@ const CartRow = ({ booking, onDelete }) => {
 
             <td className="px-4 py-4 text-2xl text-center 
                                              text-gray-300">
-                <button>
-                    <FaEdit />
-                </button>
+                <Link to={`/update/${email}/${_id}`}>
+                    <button>
+                        <FaEdit />
+                    </button>
+                </Link>
             </td>
             <td className="px-4 py-4 text-2xl text-center 
                                              text-gray-300">

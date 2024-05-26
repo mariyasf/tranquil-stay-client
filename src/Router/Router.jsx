@@ -12,6 +12,7 @@ import UserProfile from "../Components/UserProfile";
 import Rooms from "../Pages/Rooms/Rooms";
 import RoomDetails from "../Components/RoomDetails";
 import MyCart from "../Pages/MyBookingCart/MyCart";
+import Appointments from "../Pages/Rooms/Appointments";
 
 const router = createBrowserRouter([
     {
@@ -43,11 +44,15 @@ const router = createBrowserRouter([
                 </PrivateRouter>,
                 loader: ({ params }) => fetch(`${import.meta.env.VITE_API_URL}/rooms/${params.id}`)
 
-
             },
             {
                 path: "/myBookings",
-                element: <PrivateRouter> <MyCart/>  </PrivateRouter>,
+                element: <PrivateRouter> <MyCart />  </PrivateRouter>,
+            },
+            {
+                path: "/update/:email/:id",
+                element: <PrivateRouter> <Appointments />  </PrivateRouter>,
+                loader: ({ params }) => fetch(`${import.meta.env.VITE_API_URL}/booking/${params.email}/${params.id}`)
             },
             {
                 path: "/feedback",

@@ -1,17 +1,17 @@
 
 import axios from 'axios';
-import { useState } from 'react';
 import { FaEdit } from 'react-icons/fa';
 import { MdDelete } from 'react-icons/md';
 import { VscFeedback } from 'react-icons/vsc';
 import { Link } from 'react-router-dom';
-import UseAuth from '../Hooks/UseAuth';
+import Swal from 'sweetalert2';
 
-const CartRow = ({ booking }) => {
+const CartRow = ({ booking, onDelete }) => {
 
 
-
-    const { email, name, availability,
+    const {
+        _id,
+        email, name, availability,
         bookingId,
         checkIn,
         checkOut,
@@ -22,6 +22,33 @@ const CartRow = ({ booking }) => {
         bookingPricePerNight,
     } = booking
 
+    const handleDelete = async () => {
+        try {
+            const response = await axios.delete(`${import.meta.env.VITE_API_URL}/booking/${booking._id}`);
+            if (response.status === 200) {
+                onDelete(booking._id);
+
+                Swal.fire({
+                    title: "Cancel Booking!",
+                    text: "Do you want to cancel this booking?",
+                    icon: "warning",
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Yes, cancel it!"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        
+                        Swal.fire("Cancelled!", "Your booking has been cancelled.", "success");
+                    }
+                });
+
+
+
+            }
+        } catch (error) {
+            console.error("There was an error deleting the booking!", error);
+        }
+    }
 
     return (
         <tr>
@@ -71,7 +98,7 @@ const CartRow = ({ booking }) => {
             </td>
             <td className="px-4 py-4 text-2xl text-center 
                                              text-gray-300">
-                <button>
+                <button onClick={handleDelete}>
                     <MdDelete />
                 </button>
             </td>

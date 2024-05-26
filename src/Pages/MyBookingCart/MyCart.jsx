@@ -18,7 +18,13 @@ const MyCart = () => {
 
     }, [user])
 
-    console.log(mybooking.length)
+    // console.log(mybooking.length)
+
+    const handleDelete = (id) => {
+        setMyBooking(mybooking.filter(booking => booking._id !== id));
+    };
+
+
 
 
     return (
@@ -35,7 +41,7 @@ const MyCart = () => {
                                         <tr>
 
                                             <th scope="col" className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                                                 
+
                                             </th>
                                             <th scope="col" className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
                                                 Check In
@@ -44,9 +50,9 @@ const MyCart = () => {
                                                 Check Out
                                             </th>
 
-                                            
 
-                                           
+
+
                                             <th scope="col" className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
                                                 People
                                             </th>
@@ -73,7 +79,9 @@ const MyCart = () => {
                                     <tbody className="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900">
                                         {
                                             mybooking.map(booking =>
-                                                <CartRow key={booking._id}
+                                                <CartRow
+                                                    onDelete={handleDelete}
+                                                    key={booking._id}
                                                     booking={booking} />
                                             )
                                         }

@@ -1,0 +1,116 @@
+.destination {
+    text-align: center;
+}
+
+
+
+.destination-content-img {
+    gap: 16px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(3, fr);
+}
+
+.destination-content-img img {
+    width: 100%;
+    height: 100%;
+}
+
+.image-container1 {
+    grid-column: 1/span 6;
+    position: relative;
+    object-fit: cover;
+}
+
+.image-container2 {
+    grid-column: 7/span 6;
+    position: relative;
+    object-fit: cover;
+}
+
+.image-container3 {
+    grid-column: 1/span 4;
+    position: relative;
+    object-fit: cover;
+}
+
+.image-container4 {
+    grid-column: 5/span 4;
+    position: relative;
+    object-fit: cover;
+}
+
+.image-container5 {
+    grid-column: 9/span 4;
+    position: relative;
+    object-fit: cover;
+}
+
+.image-container6 {
+    grid-column: 1/span 6;
+    position: relative;
+    object-fit: cover;
+}
+
+.image-container7 {
+    grid-column: 7/span 6;
+    position: relative;
+    object-fit: cover;
+}
+
+.centered-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.image-container1::after,
+.image-container2::after,
+.image-container3::after,
+.image-container4::after,
+.image-container5::after,
+.image-container6::after,
+.image-container7::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(236, 167, 83, 0.5);
+    /* semi-transparent background */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.image-container1:hover::after,
+.image-container2:hover::after,
+.image-container3:hover::after,
+.image-container4:hover::after,
+.image-container5:hover::after,
+.image-container6:hover::after,
+.image-container7:hover::after {
+    opacity: 1;
+}
+
+@media screen and (max-width: 640px) {
+
+    .destination-content-img {
+        grid-template-columns: 1fr;
+    }
+
+    .image-container1,
+    .image-container2,
+    .image-container3,
+    .image-container4,
+    .image-container5,
+    .image-container6,
+    .image-container7 {
+        grid-column: 1/span 1;
+    }
+}

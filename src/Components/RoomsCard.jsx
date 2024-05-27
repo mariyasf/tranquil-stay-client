@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import UseAnimation from "../Hooks/UseAnimation";
+import { useEffect, useState } from "react";
 
 
-const RoomsCard = ({ room }) => {
+const RoomsCard = ({ room, sortBy }) => {
     UseAnimation()
 
     // console.log(room)
@@ -18,7 +19,17 @@ const RoomsCard = ({ room }) => {
     } = room || {}
 
     const img = roomImages[0];
-    // console.log(img)
+    const [sortedData, setSortedData] = useState([]);
+
+    useEffect(() => {
+
+
+        if (sortBy === "price") {
+            room.sort((a, b) => b.pricePerNight - a.pricePerNight);
+        }
+        setSortedData(room);
+
+    }, [sortBy,room]);
 
     return (
         <div

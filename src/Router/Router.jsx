@@ -13,6 +13,7 @@ import Rooms from "../Pages/Rooms/Rooms";
 import RoomDetails from "../Components/RoomDetails";
 import MyCart from "../Pages/MyBookingCart/MyCart";
 import Appointments from "../Pages/Rooms/Appointments";
+import Gallery from "../Pages/Home/Gallery";
 
 const router = createBrowserRouter([
     {
@@ -35,6 +36,11 @@ const router = createBrowserRouter([
             {
                 path: "/rooms",
                 element: <Rooms />,
+
+            },
+            {
+                path: "/gallery",
+                element: <Gallery />,
 
             },
             {

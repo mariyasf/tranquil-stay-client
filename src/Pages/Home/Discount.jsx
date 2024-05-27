@@ -2,7 +2,7 @@
 
 const Discount = () => {
     return (
-        <div className="bg-[#F4F2F5] lg:pt-24 ">
+        <div className="bg-[#F4F2F5] py-10 ">
             <div className='flex flex-col-reverse lg:flex-row
              relative  max-w-[1240px] mx-auto  bg-[#eca753] rounded-lg'>
                 <div className="flex-1">

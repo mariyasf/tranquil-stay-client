@@ -8,6 +8,7 @@ import UseAuth from '../../Hooks/UseAuth';
 const RoomsCategories = () => {
     const { loding } = UseAuth();
     const [rooms, setRooms] = useState([]);
+    const [sortBy, setSortBy] = useState('');
 
     useEffect(() => {
         const getData = async () => {
@@ -25,6 +26,9 @@ const RoomsCategories = () => {
             <span className="loading loading-ring loading-lg"></span>
         </div>
     }
+    const handleSortBy = (event) => {
+        setSortBy(event.target.value);
+    };
 
     const filterRoomsByCategory = (category) => {
         return rooms.filter(room => room.category === category);
@@ -39,14 +43,29 @@ const RoomsCategories = () => {
                     <Tab>Family</Tab>
                     <Tab>Premier</Tab>
                 </TabList>
+                <div className="flex justify-end mt-3">
+                    {/* <Button className="bg-green-600">Sort By</Button> */}
+
+
+                    <select name="" id="" onChange={handleSortBy}
+                        className="p-4 rounded-2xl text-white bg-[#23BE0A]">
+
+                        <option className="bg-white text-black" value="">Short By</option> 
+                        <option className="bg-white text-black" value="price">Price</option> 
+
+                    </select>
+                </div>
 
                 <TabPanel>
                     <div className='grid grid-cols-1 lg:grid-cols-3 gap-5 '>
+
+
                         {
                             filterRoomsByCategory('luxury suite').map(room => (
                                 <RoomsCard
                                     key={room._id}
                                     room={room}
+                                    sortBy={sortBy}
                                 />
                             ))
                         }
@@ -60,6 +79,7 @@ const RoomsCategories = () => {
                                 <RoomsCard
                                     key={room._id}
                                     room={room}
+                                    sortBy={sortBy}
                                 />
                             ))
                         }
@@ -73,6 +93,7 @@ const RoomsCategories = () => {
                                 <RoomsCard
                                     key={room._id}
                                     room={room}
+                                    sortBy={sortBy}
                                 />
                             ))
                         }
@@ -86,6 +107,7 @@ const RoomsCategories = () => {
                                 <RoomsCard
                                     key={room._id}
                                     room={room}
+                                    sortBy={sortBy}
                                 />
                             ))
                         }

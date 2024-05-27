@@ -13,6 +13,7 @@ import 'swiper/css/navigation';
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
+
 const Feedbacks = ({ feedUrl }) => {
     const { loding } = UseAuth()
     const [reviews, setReviews] = useState([]);
@@ -40,14 +41,14 @@ const Feedbacks = ({ feedUrl }) => {
 
 
     return (
-        <div className=' mx-auto  my-10'>
+        <div className='max-w-[1240px] mx-auto  my-10'>
             {
                 reviews.length > 0 ?
                     <>
                         <div className='text-center  my-10'>
-                            <h2 className="text-xl lg:text-3xl font-Rancho  italic  text-center pt-20">What they say</h2>
+                            <h2 className="text-xl lg:text-3xl text-[#eca753] font-Rancho  italic  text-center pt-20">What they say</h2>
 
-                            <h2 className='text-3xl lg:text-8xl font-Rancho font-bold'>Customer Reviews: {reviews.length}</h2>
+                            <h2 className='text-3xl lg:text-8xl text-[#000e0e] font-Rancho font-bold'>Customer Reviews</h2>
                         </div>
 
                         <Swiper

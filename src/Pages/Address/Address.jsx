@@ -11,8 +11,8 @@ const Address = () => {
     return (
         <div>
             <div className='bg-[#d8ad5d] py-20 w-full'
-                data-aos="zoom-out"
-                data-aos-offset="500"
+                // data-aos="zoom-out"
+                // data-aos-offset="500"
             >
                 <iframe
                     className='w-full'
@@ -33,7 +33,7 @@ const Address = () => {
                     className='bg-[#011515] '>
                     <div className='lg:max-w-[1240px] mx-auto text-white flex flex-col lg:flex-row gap-10 px-10'>
                         <div data-aos="zoom-out"
-                            className='p-5 bg-[#000e0e] shadow-xl -mt-10 pt-20'>
+                            className='p-5 bg-[#000e0e] shadow-2xl shadow-slate-800-400 -mt-10 pt-20'>
                             <h2 className='font-Cormorrant text-5xl font-bold'>Contact Info</h2>
                             <div className="flex items-center gap-5 pt-5 font-Cormorrant">
 

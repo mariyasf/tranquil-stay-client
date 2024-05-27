@@ -2,18 +2,36 @@
 import { Outlet } from 'react-router-dom';
 import Navbar from '../Pages/Shared/Navbar';
 import Footer from '../Pages/Shared/Footer';
+import { useEffect, useState } from 'react';
+import LoadingSpinner from '../Pages/LoadingSpinner/LoadingSpinner';
+
 
 const Root = () => {
-    return (
-        <div className='bg-white '>
-            {/* <div className="bg-[url('/Images/b.jpg')] bg-no-repeat bg-cover">
-               
-            </div> */}
-            <Navbar />
-            <Outlet />
+    const [loading, setLoading] = useState(false);
 
-            <Footer />
-        </div>
+    useEffect(() => {
+        setLoading(true)
+        setTimeout(() => {
+            setLoading(false);
+        }, 3000)
+    }, [])
+
+    return (
+        <>
+             
+            {
+                loading ?
+                    <LoadingSpinner loading={loading} />
+                    :
+                    <div className='bg-white '>
+
+                        <Navbar />
+                        <Outlet />
+
+                        <Footer />
+                    </div>
+            }
+        </>
     );
 };
 

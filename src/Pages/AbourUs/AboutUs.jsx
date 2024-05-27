@@ -9,11 +9,11 @@ import { Link } from "react-router-dom";
 
 const AboutUs = () => {
     return (
-        <div className='pt-32 max-w-[1240px] mx-auto '>
+        <div className=' max-w-[1240px] mx-auto '>
             <Helmet>
                 <title>About Us</title>
             </Helmet>
-            <div className="flex flex-col lg:flex-row gap-5 bg-black">
+            <div className="flex flex-col lg:flex-row gap-5 bg-[black]">
                 <img src="/Images/b.jpg" alt=""
                     data-aos="zoom-out"
                 />

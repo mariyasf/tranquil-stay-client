@@ -9,14 +9,14 @@ const Banner = () => {
         <div className="">
             <div
 
-                className="custom-bg relative min-h-screen max-h-full mt-32
+                className="custom-bg relative min-h-screen max-h-full  
             bg-cover bg-center flex flex-col items-center">
 
                 <div className="text-center text-white py-20 space-y-10"
                     data-aos="zoom-out" data-aos-anchor-placement="top-center"
 
                 >
-                    <p className="flex justify-center gap-2 text-center text-[#c09d73]">
+                    <p className="flex justify-center gap-2 text-center text-[#eca753]">
                         <FaStar />
                         <FaStar />
                         <FaStar />
@@ -25,19 +25,19 @@ const Banner = () => {
                     </p>
                     <h4 className="text-white font-Rancho text-3xl lg:text-3xl border-b-2
                  border-b-[#c09d73] w-[200px] mx-auto italic">Welcome to our</h4>
-                    <h2 className="text-3xl lg:text-8xl font-Poppins font-bold">Tranquil Stay</h2>
+                    <h2 className="text-3xl lg:text-8xl font-Poppins font-bold">Tranquil <span className="text-[#eca753]">Stay</span></h2>
 
-                    <p className="px-5 lg:w-[1200px] mx-auto font-Poppins text-xl lg:text-3xl">
+                    <p className="px-5 lg:w-[940px] mx-auto font-Poppins  text-xl lg:text-3xl">
                         Tranquil Stay is a serene and luxurious hotel dedicated to providing our guests with an
                         unparalleled experience of relaxation and comfort.
                     </p>
                     <Link to={"/aboutUs"}>
                         <button className="btn  btn-outline   border-white border-2 text-white font-bold
-                 hover:bg-[#86653d] hover:border-none text-xl">Learn More</button>
+                 hover:bg-[#eca753] hover:border-none text-xl">Learn More</button>
 
                     </Link>
                 </div>
-                <div className="lg:absolute bottom-0 top-[600px]">
+                <div className="pb-10 lg:pb-0 lg:absolute   bottom-0 top-[600px]">
                     <form action="">
                         <div className=" bg-black border-t-4 border-t-[#d8ad5d] p-5
                 flex flex-col lg:flex-row justify-evenly items-center gap-5">

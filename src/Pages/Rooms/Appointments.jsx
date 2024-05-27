@@ -7,6 +7,7 @@ import { MdRoomService } from "react-icons/md";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 import UseAuth from "../../Hooks/UseAuth";
+import { Helmet } from "react-helmet";
 
 
 const Appointments = () => {
@@ -41,7 +42,7 @@ const Appointments = () => {
             newAdults,
             newChild
         }
-        console.log(newUpdate);
+        // console.log(newUpdate);
 
         try {
             const response = await axios
@@ -70,6 +71,10 @@ const Appointments = () => {
 
     return (
         <div className="bg-[#f8f6f3] pb-20 pt-40">
+            <Helmet>
+                <title>Update Booking</title>
+            </Helmet>
+
             <div className="text-center ">
                 <h2 className="text-3xl font-Rancho  italic  text-center pt-20">Update Your Appointment</h2>
                 <h2 className="text-8xl font-Rancho font-bold text-center pt-5">{bookingRoomTypes}</h2>

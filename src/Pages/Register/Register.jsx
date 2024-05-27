@@ -23,7 +23,7 @@ const Register = () => {
         const phoneNumber = form.get('phoneNumber');
         const password = form.get('password');
         const termsAC = e.target.terms.checked;
-        console.log(name, photo, email, password);
+        // console.log(name, photo, email, password);
 
         // Reset error or success
         toast.dismiss();
@@ -47,7 +47,7 @@ const Register = () => {
         // create new User
         createNewUser(email, password)
             .then(result => {
-                console.log(result.user);
+                // console.log(result.user);
                 toast.success('Registration successful! You can now log in.');
 
                 // Update Profile
@@ -66,7 +66,7 @@ const Register = () => {
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data);
+                        // console.log(data);
                         if (data.insertedId) {
                             console.log('Register user')
                         }

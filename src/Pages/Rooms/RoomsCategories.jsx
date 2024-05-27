@@ -3,8 +3,10 @@ import 'react-tabs/style/react-tabs.css';
 import RoomsCard from '../../Components/RoomsCard';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import UseAuth from '../../Hooks/UseAuth';
 
 const RoomsCategories = () => {
+    const { loding } = UseAuth();
     const [rooms, setRooms] = useState([]);
 
     useEffect(() => {
@@ -16,14 +18,20 @@ const RoomsCategories = () => {
         getData()
     }, []);
 
-    console.log(rooms.length);
+    // console.log(rooms.length);
+
+    if (loding) {
+        return <div className="text-center">
+            <span className="loading loading-ring loading-lg"></span>
+        </div>
+    }
 
     const filterRoomsByCategory = (category) => {
         return rooms.filter(room => room.category === category);
     };
 
     return (
-        <div className='max-w-[1240px] bg-white mx-auto my-10 px-5'>
+        <div className='lg:max-w-[1240px] bg-white mx-auto my-10 px-10 lg:px-5'>
             <Tabs>
                 <TabList>
                     <Tab>Luxury</Tab>
@@ -36,7 +44,7 @@ const RoomsCategories = () => {
                     <div className='grid grid-cols-1 lg:grid-cols-3 gap-5 '>
                         {
                             filterRoomsByCategory('luxury suite').map(room => (
-                                <RoomsCard 
+                                <RoomsCard
                                     key={room._id}
                                     room={room}
                                 />

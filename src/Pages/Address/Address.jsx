@@ -27,80 +27,82 @@ const Address = () => {
             </div>
 
 
-            <div>
+            <div >
 
                 <div
-                    className='bg-[#011515] text-white flex flex-col lg:flex-row gap-10 px-10'>
-                    <div  data-aos="zoom-out"
-                        className='p-5 bg-[#000e0e] shadow-xl'>
-                        <h2 className='font-Cormorrant text-5xl font-bold'>Contact Info</h2>
-                        <div className="flex items-center gap-5 pt-5 font-Cormorrant">
+                    className='bg-[#011515] '>
+                    <div className='lg:max-w-[1240px] mx-auto text-white flex flex-col lg:flex-row gap-10 px-10'>
+                        <div data-aos="zoom-out"
+                            className='p-5 bg-[#000e0e] shadow-xl -mt-10 pt-20'>
+                            <h2 className='font-Cormorrant text-5xl font-bold'>Contact Info</h2>
+                            <div className="flex items-center gap-5 pt-5 font-Cormorrant">
 
-                            <div>
-                                <FaPhoneAlt
-                                    className="text-[#c09d73] text-2xl" />
+                                <div>
+                                    <FaPhoneAlt
+                                        className="text-[#c09d73] text-2xl" />
+                                </div>
+                                <div >
+                                    <p className="font-Poppins">+980 123 (4567) 890</p>
+                                </div>
                             </div>
-                            <div >
-                                <p className="font-Poppins">+980 123 (4567) 890</p>
+                            <div className="flex items-center gap-5 py-10">
+                                <div >
+                                    <MdEmail className="text-[#c09d73] text-2xl" />
+                                </div>
+                                <div  >
+                                    <p className="font-Poppins">example@gmail.com</p>
+                                </div>
+                            </div>
+                            <div className="flex items-center gap-5">
+                                <div>
+                                    <FaLocationDot className="text-[#c09d73] text-2xl" />
+                                </div>
+                                <div  >
+                                    <p className="font-Poppins">New elephant Road, Dhanmondi<br />Dhaka - 1212</p>
+                                </div>
+                            </div>
+                            <div className='flex gap-5 text-4xl py-10 mt-5 justify-center border-t-2'>
+                                <FaFacebook className='hover:text-[#d8ad5d]' />
+                                <FaInstagramSquare className='hover:text-[#d8ad5d]' />
+                                <FaLinkedin className='hover:text-[#d8ad5d]' />
                             </div>
                         </div>
-                        <div className="flex items-center gap-5 py-10">
-                            <div >
-                                <MdEmail className="text-[#c09d73] text-2xl" />
-                            </div>
-                            <div  >
-                                <p className="font-Poppins">example@gmail.com</p>
-                            </div>
-                        </div>
-                        <div className="flex items-center gap-5">
-                            <div>
-                                <FaLocationDot className="text-[#c09d73] text-2xl" />
-                            </div>
-                            <div  >
-                                <p className="font-Poppins">New elephant Road, Dhanmondi<br />Dhaka - 1212</p>
-                            </div>
-                        </div>
-                        <div className='flex gap-5 text-4xl py-10 mt-5 justify-center border-t-2'>
-                            <FaFacebook className='hover:text-[#d8ad5d]' />
-                            <FaInstagramSquare className='hover:text-[#d8ad5d]' />
-                            <FaLinkedin className='hover:text-[#d8ad5d]' />
-                        </div>
-                    </div>
-                    <div data-aos="zoom-out" className='flex-1 pt-10'>
-                        <div className='grid grid-cols-1 lg:grid-cols-3 gap-5  font-Cormorrant p-5'>
-                            <div>
-                                <h2 className=' text-white text-2xl uppercase pb-10'>Useful Links</h2>
+                        <div data-aos="zoom-out" className='flex-1 pt-10'>
+                            <div className='grid grid-cols-1 lg:grid-cols-3 gap-5  font-Cormorrant p-5'>
+                                <div>
+                                    <h2 className=' text-white text-2xl uppercase pb-10'>Useful Links</h2>
 
-                                <ul className='menu menu-dropdown-toggle'>
-                                    <li> <NavLink className={"text-2xl"} to={'/aboutUs'}>About</NavLink> </li>
-                                    <li> <NavLink className={"text-2xl"} to={'/contactUs'}>Contact</NavLink> </li>
-                                    <li> <NavLink className={"text-2xl"} to={'/rooms'}>Rooms</NavLink> </li>
+                                    <ul className='menu menu-dropdown-toggle'>
+                                        <li> <NavLink className={"text-2xl"} to={'/aboutUs'}>About</NavLink> </li>
+                                        <li> <NavLink className={"text-2xl"} to={'/contactUs'}>Contact</NavLink> </li>
+                                        <li> <NavLink className={"text-2xl"} to={'/rooms'}>Rooms</NavLink> </li>
 
-                                </ul >
-                            </div>
+                                    </ul >
+                                </div>
 
-                            <div>
-                                <h2 className=' text-white text-2xl uppercase pb-10'>Gallery</h2>
+                                <div>
+                                    <h2 className=' text-white text-2xl uppercase pb-10'>Gallery</h2>
 
-                                <div className='grid grid-cols-3 gap-2'>
-                                    <img className='w-32 h-32' src="/Images/g1.jpg" alt="" />
-                                    <img className='w-32 h-32' src="/Images/g2.jpg" alt="" />
-                                    <img className='w-32 h-32' src="/Images/g3.jpg" alt="" />
-                                    <img className='w-32 h-32' src="/Images/g4.jpg" alt="" />
-                                    <img className='w-32 h-32' src="/Images/g5.jpg" alt="" />
-                                    <img className='w-32 h-32' src="/Images/g6.jpg" alt="" />
+                                    <div className='grid grid-cols-3 gap-2'>
+                                        <img className='w-32 h-32' src="/Images/g1.jpg" alt="" />
+                                        <img className='w-32 h-32' src="/Images/g2.jpg" alt="" />
+                                        <img className='w-32 h-32' src="/Images/g3.jpg" alt="" />
+                                        <img className='w-32 h-32' src="/Images/g4.jpg" alt="" />
+                                        <img className='w-32 h-32' src="/Images/g5.jpg" alt="" />
+                                        <img className='w-32 h-32' src="/Images/g6.jpg" alt="" />
+                                    </div>
+
+                                </div>
+                                <div>
+                                    <h2 className=' text-white text-2xl uppercase'>NEWSLETTER</h2>
+                                    <p className='text-white pb-5'>Subscribe our Newsletter</p>
+                                    <form className='space-y-5'>
+                                        <input className='p-4 w-full rounded-lg' placeholder='Email' type="email" name="email" id="" />
+                                        <input className='w-full btn border-none bg-[#d8ad5d] text-white text-xl' type="submit" value="Subscribe Now" />
+                                    </form>
                                 </div>
 
                             </div>
-                            <div>
-                                <h2 className=' text-white text-2xl uppercase'>NEWSLETTER</h2>
-                                <p className='text-white pb-5'>Subscribe our Newsletter</p>
-                                <form className='space-y-5'>
-                                    <input className='p-4 w-full rounded-lg' placeholder='Email' type="email" name="email" id="" />
-                                    <input className='w-full btn border-none bg-[#d8ad5d] text-white text-xl' type="submit" value="Subscribe Now" />
-                                </form>
-                            </div>
-
                         </div>
                     </div>
                 </div>

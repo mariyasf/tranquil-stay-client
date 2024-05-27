@@ -5,7 +5,7 @@ import UseAnimation from "../Hooks/UseAnimation";
 const RoomsCard = ({ room }) => {
     UseAnimation()
 
-    console.log(room)
+    // console.log(room)
     const {
         _id,
         availability,
@@ -18,7 +18,7 @@ const RoomsCard = ({ room }) => {
     } = room || {}
 
     const img = roomImages[0];
-    console.log(img)
+    // console.log(img)
 
     return (
         <div
@@ -33,22 +33,25 @@ const RoomsCard = ({ room }) => {
                     {
                         availability === true ?
                             <Link to={`/rooms/${_id}`}>
-                                <div className="card-end bg-black hover:bg-[#c09d73] text-white block">
+                                <div className="card-end rounded-lg bg-black hover:bg-[#c09d73] text-white block">
                                     <h2 className="text-center p-5 font-Cormorrant text-2xl">View Details</h2>
                                 </div>
                             </Link>
                             :
-                            <div className="card-end bg-green-700 text-white block">
-                                <h2 className="text-center p-5 font-Cormorrant text-2xl">Already Booking</h2>
-                            </div>
+                            <Link to={`/rooms/${_id}`}>
+                                <div className="card-end bg-green-700 hover:bg-green-900 text-white block">
+                                    <h2 className="text-center p-5 font-Cormorrant text-2xl">Already Booking</h2>
+                                </div>
+                            </Link>
+
 
                     }
 
 
                 </div>
 
-                <div className="w-56 -mt-10 overflow-hidden bg-white rounded-lg 
-                shadow-lg md:w-64 dark:bg-gray-800">
+                <div className="w-2/3 md:w-64 lg:w-56 -mt-10 overflow-hidden bg-white rounded-lg 
+                shadow-lg  dark:bg-gray-800">
                     <h3 className="py-2 font-bold tracking-wide text-center
                      text-[#c09d73] uppercase dark:text-white">
                         {roomTypes}

@@ -22,7 +22,7 @@ const AuthProviders = ({ children }) => {
     }
     // Use Google login
     const handleGoogleSignIn = () => {
-        console.log("Google login");
+        // console.log("Google login");
         setLoding(true);
         return signInWithPopup(auth, googleProvider)
     }
@@ -46,7 +46,7 @@ const AuthProviders = ({ children }) => {
 
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
-            console.log('User in the auth state changed', currentUser);
+            // console.log('User in the auth state changed', currentUser);
             setUser(currentUser);
             setLoding(false);
         })

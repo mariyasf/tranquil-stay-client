@@ -9,28 +9,28 @@ import { Link } from "react-router-dom";
 
 const AboutUs = () => {
     return (
-        <div className='pt-40 max-w-[1240px] mx-auto bg-transparent'>
+        <div className='pt-32 max-w-[1240px] mx-auto '>
             <Helmet>
                 <title>About Us</title>
             </Helmet>
-            <div className="flex flex-col lg:flex-row gap-5">
+            <div className="flex flex-col lg:flex-row gap-5 bg-black">
                 <img src="/Images/b.jpg" alt=""
                     data-aos="zoom-out"
                 />
-                <div className="space-y-5"
+                <div className="space-y-5 py-10 px-10 lg:px-5"
                     data-aos="zoom-out"
                 >
                     <h2 className="font-Poppins text-xl italic text-[#d8ad5d]">
                         LUXURY HOTEL
                     </h2>
-                    <h2 className="font-Poppins font-bold text-5xl text-white">
+                    <h2 className="font-Poppins font-bold text-2xl lg:text-5xl text-white">
                         LUXURY BEST HOTEL IN THE CITY
                     </h2>
-                    <p className="text-2xl font-Cormorrant text-white">
+                    <p className=" text-xl lg:text-2xl font-Cormorrant text-white">
                         Welcome to our luxurious hotel, where sophistication, impeccable service, and unparalleled comfort await you. From the moment you step into our grand lobby, you'll be immersed in an atmosphere of opulence and refined elegance.
 
                     </p>
-                    <p className="text-2xl font-Cormorrant pb-5 text-white">
+                    <p className="text-xl lg:text-2xl font-Cormorrant pb-5 text-white">
                         As you enter our establishment, you will be greeted by a captivating ambiance that exudes both sophistication and tranquility, setting the stage for an unforgettable stay.
                     </p>
 

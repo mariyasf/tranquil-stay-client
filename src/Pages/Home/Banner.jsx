@@ -14,7 +14,7 @@ const Banner = () => {
 
                 <div className="text-center text-white py-20 space-y-10"
                     data-aos="zoom-out" data-aos-anchor-placement="top-center"
-                    
+
                 >
                     <p className="flex justify-center gap-2 text-center text-[#c09d73]">
                         <FaStar />
@@ -37,7 +37,7 @@ const Banner = () => {
 
                     </Link>
                 </div>
-                <div className="lg:absolute bottom-0 top-[600px]  ">
+                <div className="lg:absolute bottom-0 top-[600px]">
                     <form action="">
                         <div className=" bg-black border-t-4 border-t-[#d8ad5d] p-5
                 flex flex-col lg:flex-row justify-evenly items-center gap-5">

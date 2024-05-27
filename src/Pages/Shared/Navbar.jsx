@@ -3,7 +3,6 @@ import logo from '/logo.png';
 import '../../index.css'
 import UseAuth from "../../Hooks/UseAuth";
 import profile from '/Images/user.png'
-import { useEffect, useState } from "react";
 import UseTheme from "../../Hooks/UseTheme";
 
 const Navbar = () => {
@@ -13,7 +12,7 @@ const Navbar = () => {
 
     const handleToggle = (e) => {
         if (e.target.checked) {
-            setTheme('dark');
+            setTheme('black');
         }
         else setTheme('light');
     }
@@ -23,6 +22,7 @@ const Navbar = () => {
             .then()
             .catch()
     }
+
     function isValidURL(url) {
         const urlPattern = /^(ftp|http|https):\/\/[^ "]+$/;
         return urlPattern.test(url);
@@ -32,18 +32,7 @@ const Navbar = () => {
         <li> <NavLink to={'/'}>Home</NavLink> </li>
         <li> <NavLink to={'/aboutUs'}>About</NavLink> </li>
         <li> <NavLink to={'/contactUs'}>Contact</NavLink> </li>
-        <li> <NavLink to={'/feedback'}>Feedback</NavLink> </li>
-        {/* <li> <NavLink to={'/rooms'}>Rooms</NavLink> </li> */}
-        <li>
-            <details>
-                <summary>Rooms</summary>
-                <ul className="p-2 bg-[#000e0e]">
-                    <li> <NavLink to={'/addrooms'}>Add</NavLink> </li>
-                    <li> <NavLink to={'/rooms'}>Rooms</NavLink> </li>
-                </ul>
-            </details>
-
-        </li>
+        <li> <NavLink to={'/rooms'}>Rooms</NavLink> </li>
 
         <li> <NavLink to={'/myBookings'}>My Bookings</NavLink> </li>
 
@@ -121,6 +110,7 @@ const Navbar = () => {
                                     <svg className="col-start-1 row-start-1 stroke-base-100 fill-base-100" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="5" /><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" /></svg>
                                     <svg className="col-start-2 row-start-1 stroke-base-100 fill-base-100" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
                                 </label>
+
                             </>
                             :
                             <div >

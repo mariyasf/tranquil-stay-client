@@ -13,7 +13,7 @@ const Contact = () => {
             </Helmet>
 
             <div className="flex flex-col lg:flex-row gap-10 justify-between mb-10
-         max-w-[1240px] mx-auto mt-40 p-10 lg:p-20 rounded-xl bg-[#f8f6f3]">
+        lg:max-w-[1240px] mx-auto mt-32 p-10 lg:p-20 rounded-xl bg-[#f8f6f3]">
                 <div className="flex-1 font-Cormorrant space-y-5">
                     <div className="space-y-5">
                         <h4 className=" text-[#c09d73] text-2xl w-[120px] border-b border-b-[#c09d73]">Contact us</h4>

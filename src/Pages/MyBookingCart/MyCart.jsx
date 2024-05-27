@@ -2,11 +2,14 @@
 import UseAuth from "../../Hooks/UseAuth";
 import { useEffect, useState } from "react";
 import CartRow from "../../Components/CartRow";
+import { Helmet } from "react-helmet";
 
 
 const MyCart = () => {
-    const { user } = UseAuth();
+    const { user, loding } = UseAuth();
+
     const [mybooking, setMyBooking] = useState([]);
+
 
     useEffect(() => {
         fetch(`${import.meta.env.VITE_API_URL}/booking/${user?.email}`)
@@ -20,7 +23,12 @@ const MyCart = () => {
 
     }, [user])
 
-    // console.log(mybooking.length)
+    if (loding) {
+        return <div className="text-center">
+            <span className="loading loading-ring loading-lg"></span>
+        </div>
+    }
+
 
     const handleDelete = (id) => {
         setMyBooking(mybooking.filter(booking => booking._id !== id));
@@ -31,6 +39,10 @@ const MyCart = () => {
 
     return (
         <div className="mt-36">
+            <Helmet>
+                <title>My Cart</title>
+            </Helmet>
+
             <section className="container px-4 mx-auto mt-10">
                 <div className="flex flex-col">
                     <div className="overflow-x-auto ">
@@ -79,8 +91,9 @@ const MyCart = () => {
                                         {
                                             mybooking.map(booking =>
                                                 <CartRow
-                                                    onDelete={handleDelete}
                                                     key={booking._id}
+                                                    onDelete={handleDelete}
+
                                                     booking={booking} />
                                             )
                                         }

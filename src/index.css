@@ -5,25 +5,10 @@
 @tailwind components;
 @tailwind utilities;
 
-.primary-clr-1 {
-    color: #c09d73
-}
-
-.primary-clr-2 {
-    color: #d8ad5d
-}
 
 .custom-bg {
     background-image: url('/Images/b2.jpg'), linear-gradient(180deg, rgba(0, 0, 10, 0.8) 0%, rgba(133, 133, 146, 0) 100%);
     background-repeat: no-repeat;
     background-size: cover;
     background-blend-mode: overlay;
-}
-
-
-
-
-input[type="date"i] {
-    font-family: monospace;
-
 }

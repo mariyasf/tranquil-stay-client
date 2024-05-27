@@ -9,6 +9,7 @@ import Swal from 'sweetalert2';
 const CartRow = ({ booking, onDelete }) => {
 
 
+
     const {
         _id,
         email, name, availability,
@@ -21,6 +22,7 @@ const CartRow = ({ booking, onDelete }) => {
         bookingRoomTypes,
         bookingPricePerNight,
     } = booking
+    const Imgicon = img[0];
 
     const handleDelete = async () => {
         try {
@@ -29,7 +31,8 @@ const CartRow = ({ booking, onDelete }) => {
             cancellationDate.setDate(cancellationDate.getDate() - 1);
 
             if (today < cancellationDate) {
-                const response = await axios.delete(`${import.meta.env.VITE_API_URL}/booking/${booking._id}`);
+                const response = await axios
+                    .delete(`${import.meta.env.VITE_API_URL}/booking/${booking._id}`);
                 if (response.status === 200) {
                     onDelete(booking._id);
 
@@ -64,18 +67,20 @@ const CartRow = ({ booking, onDelete }) => {
 
     return (
         <tr>
-            <Link to={`/rooms/${bookingId}`}>
-                <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
+
+            <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
+                <Link to={`/rooms/${bookingId}`}>
                     <div className="flex items-center gap-x-2">
                         <img className="object-cover w-8 h-8 rounded-full"
-                            src={img[0]} alt="" />
+                            src={Imgicon} alt="" />
                         <div>
                             <h2 className="text-sm font-medium text-gray-800 dark:text-white ">{bookingRoomTypes}</h2>
                             <p className="text-xs font-normal text-gray-600 dark:text-gray-400">{bookingCategory}</p>
                         </div>
                     </div>
-                </td>
-            </Link>
+                </Link>
+            </td>
+
 
             <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 
             whitespace-nowrap">
@@ -118,9 +123,11 @@ const CartRow = ({ booking, onDelete }) => {
             </td>
             <td className="px-4 py-4 text-2xl text-center 
                                              text-gray-300">
-                <button>
-                    <VscFeedback />
-                </button>
+                <Link to={`/feedback/${bookingId}`}>
+                    <button>
+                        <VscFeedback />
+                    </button>
+                </Link>
             </td>
         </tr>
     );

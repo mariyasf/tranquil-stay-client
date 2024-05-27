@@ -55,7 +55,7 @@ const router = createBrowserRouter([
                 loader: ({ params }) => fetch(`${import.meta.env.VITE_API_URL}/booking/${params.email}/${params.id}`)
             },
             {
-                path: "/feedback",
+                path: "/feedback/:bookingId",
                 element: <CustomerFeedback />,
             },
             {

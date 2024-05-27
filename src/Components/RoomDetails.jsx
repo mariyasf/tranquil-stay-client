@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import BannerCard from "../Pages/Shared/BannerCard";
 import SwipperImg from "./SwipperImg";
 import { FaMattressPillow, FaPersonWalkingLuggage, FaRightFromBracket } from "react-icons/fa6";
@@ -11,15 +11,18 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import UseAuth from "../Hooks/UseAuth";
 import UseAnimation from "../Hooks/UseAnimation";
+import Feedbacks from "../Pages/CustomerFeedback/Feedbacks";
+import { Helmet } from "react-helmet";
 
 const RoomDetails = () => {
     UseAnimation()
-    const { user } = UseAuth();
+    const { user, loding } = UseAuth();
 
     const room = useLoaderData();
     const {
         _id,
         description,
+        availability,
         category,
         roomTypes,
         pricePerNight,
@@ -27,6 +30,12 @@ const RoomDetails = () => {
         roomImages,
         specialOffers
     } = room || {}
+
+    if (loding) {
+        return <div className="text-center">
+            <span className="loading loading-ring loading-lg"></span>
+        </div>
+    }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -75,7 +84,7 @@ const RoomDetails = () => {
             const { data } = await axios.post(
                 `${import.meta.env.VITE_API_URL}/booking`,
                 booking)
-            console.log(data);
+            // console.log(data);
             if (data.insertedId) {
                 Swal.fire({
                     title: "Do you want to confirm the booking?",
@@ -97,6 +106,9 @@ const RoomDetails = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Room-details</title>
+            </Helmet>
             <BannerCard
                 path={"home/rooms/room-details"}
                 title={"ROOM DETAILS"} />
@@ -105,8 +117,23 @@ const RoomDetails = () => {
                     <div>
                         <SwipperImg roomImages={roomImages} />
                     </div>
-                    <h2 className="text-[#d8ad5d] text-2xl uppercase mt-10 mx-10 lg:mx-0">{category}</h2>
+                    <div className="flex flex-col lg:flex-row justify-between">
+                        <h2 className="text-[#d8ad5d] text-2xl uppercase mt-10 mx-10 lg:mx-0">{category}</h2>
+                        {
+                            availability === true ?
 
+                                <div className="card-end rounded-lg mx-10 lg:mx-0  bg-green-200  text-green-950 font-bold block">
+                                    <h2 className="text-center p-5 font-Cormorrant text-2xl">Available</h2>
+                                </div>
+                                :
+                                <div className="card-end bg-red-100 mx-10 lg:mx-0 text-red-950 font-bold block">
+                                    <h2 className="text-center p-5 font-Cormorrant text-2xl">Already Booking</h2>
+                                </div>
+
+
+
+                        }
+                    </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 font-bold text-2xl  border-y-2 py-5 my-5 mx-10 lg:mx-0">
                         <h2 className="">Price: <span className="font-Poppins text-xl bg-green-500 ">{pricePerNight}/Per Night</span></h2>
                         <h2>Size: <span className="font-Poppins text-xl">{roomSize}</span> /Room</h2>
@@ -115,10 +142,10 @@ const RoomDetails = () => {
 
                     <div className="mx-10 lg:mx-0  space-y-5 ">
                         <h2 className="text-5xl font-bold">{roomTypes}</h2>
-                        <p data-aos="zoom-in" data-aos-delay="1200" className="text-2xl">{description}</p>
+                        <p data-aos="fade-up" data-aos-delay="1200" className="text-2xl">{description}</p>
                     </div>
 
-                    <div data-aos="zoom-in" data-aos-delay="1200" className="flex flex-col lg:flex-row gap-5 justify-between mx-10 lg:mx-0 mt-5">
+                    <div data-aos="fade-up" data-aos-delay="1200" className="flex flex-col lg:flex-row gap-5 justify-between mx-10 lg:mx-0 mt-5">
                         <div className="space-y-2">
                             <h2 className="flex gap-4 font-bold text-3xl items-center">
                                 <FaArrowCircleRight />
@@ -147,7 +174,7 @@ const RoomDetails = () => {
 
 
 
-                    <div data-aos="zoom-in" data-aos-delay="1200" className="space-y-4 mt-5 mx-10 lg:mx-0">
+                    <div data-aos="fade-up" data-aos-delay="1200" className="space-y-4 mt-5 mx-10 lg:mx-0">
                         <h2 className="font-bold text-3xl">Childreen & Extra Beds</h2>
                         <p className="text-2xl">
                             For a hotel or accommodation service, providing features related to children and extra beds is essential to cater to the needs of families and larger groups.
@@ -232,16 +259,27 @@ const RoomDetails = () => {
 
                             </div>
                             <div>
+                                {
+                                    availability === true ?
 
-                                <input
-                                    className="font-Cormorrant btn border-none w-full
+                                        <input
+                                            className="font-Cormorrant btn border-none w-full
                                  bg-[#d8ad5d] hover:bg-[#937131] text-white text-xl"
-                                    type="submit" value="Book Now" />
+                                            type="submit" value="Book Now" />
+                                        :
+                                        <input
+                                            disabled
+                                            className="font-Cormorrant btn border-none w-full
+                                 bg-[#d8ad5d] hover:bg-[#937131] text-white text-xl"
+                                            type="submit" value="Already Booked" />
+                                }
+
+
                             </div>
                         </form>
                     </div>
 
-                    <div className="font-Cormorrant mx-10 lg:mx-0">
+                    <div className="font-Cormorrant">
                         <h2 className="text-3xl font-bold my-10">
                             ROOM FACILITIES
                         </h2>
@@ -267,6 +305,8 @@ const RoomDetails = () => {
                 </div>
 
             </div>
+
+            <Feedbacks feedUrl={`${import.meta.env.VITE_API_URL}/feedback/${_id}`} />
         </div>
     );
 };

@@ -2,14 +2,14 @@
 
 const Discount = () => {
     return (
-        <div className="bg-[#F4F2F5] py-10 ">
-            <div className='flex flex-col-reverse lg:flex-row
+        <div className="bg-[#F4F2F5] py-10 mt-10">
+            <div className='flex flex-col-reverse lg:flex-row h-[450px]
              relative  max-w-[1240px] mx-auto  bg-[#eca753] rounded-lg'>
                 <div className="flex-1">
                     <div className="relative col-span-2">
                         <div className="carousel-item">
                             <img src="/Images/d.jpg"
-                                className="w-full h-full object-cover"
+                                className="w-full h-[450px] object-cover"
                                 alt="Banner" />
                             <div className="absolute inset-0 flex flex-col items-center
                  justify-center bg-black bg-opacity-50">

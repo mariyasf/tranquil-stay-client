@@ -6,6 +6,7 @@ import Feedbacks from "../CustomerFeedback/Feedbacks";
 import Discount from "./Discount";
 import Experience from "./Experience";
 import DisplayRoomCard from "./DisplayRoomCard";
+import ClientQuestion from "./ClientQuestion";
 
 
 const Home = () => {
@@ -19,9 +20,10 @@ const Home = () => {
             <Banner />
             <About />
             <DisplayRoomCard />
-            <Experience />
             <Discount />
-            
+            <Experience />
+
+            <ClientQuestion />
 
 
             <Feedbacks

@@ -23,11 +23,11 @@ const Banner = () => {
                         <FaStar />
                         <FaStar />
                     </p>
-                    <h4 className="text-white font-Rancho text-3xl lg:text-3xl border-b-2
+                    <h4 className="text-white font-Cormorrant text-3xl lg:text-3xl border-b-2
                  border-b-[#c09d73] w-[200px] mx-auto italic">Welcome to our</h4>
                     <h2 className="text-3xl lg:text-8xl font-Poppins font-bold">Tranquil <span className="text-[#eca753]">Stay</span></h2>
 
-                    <p className="px-5 lg:w-[940px] mx-auto font-Poppins  text-xl lg:text-3xl">
+                    <p className="px-5 lg:w-[940px] mx-auto font-Cormorrant font-bold  text-xl lg:text-3xl">
                         Tranquil Stay is a serene and luxurious hotel dedicated to providing our guests with an
                         unparalleled experience of relaxation and comfort.
                     </p>

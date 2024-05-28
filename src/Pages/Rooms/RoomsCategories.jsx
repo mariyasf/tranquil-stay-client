@@ -48,10 +48,10 @@ const RoomsCategories = () => {
 
 
                     <select name="" id="" onChange={handleSortBy}
-                        className="p-4 rounded-2xl text-white bg-[#23BE0A]">
+                        className="p-4 rounded-2xl text-white bg-[#d8ad5d]">
 
-                        <option className="bg-white text-black" value="">Short By</option> 
-                        <option className="bg-white text-black" value="price">Price</option> 
+                        <option className="bg-white text-black" value="">Short By</option>
+                        <option className="bg-white text-black" value="price">Price</option>
 
                     </select>
                 </div>

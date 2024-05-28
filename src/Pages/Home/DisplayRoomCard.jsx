@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const DisplayRoomCard = () => {
     return (
-        <div className="py-10">
+        <div className="py-10 mt-10">
             <div className="flex flex-col lg:flex-row gap-5 max-w-[1240px] mx-auto px-10 lg:px-0 font-Cormorrant">
 
                 <div className="w-full lg:max-w-sm overflow-hidden bg-[#F4F2F5] rounded-lg 

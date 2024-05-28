@@ -14,7 +14,7 @@
 }
 
 .custom-bg {
-    background-image: url('/Images/b2.jpg'), linear-gradient(180deg, rgba(0, 0, 10, 0.8) 0%, rgba(133, 133, 146, 0) 100%);
+    background-image: url('/Images/b2.jpg'), linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgb(112, 112, 130) 100%);
     background-repeat: no-repeat;
     background-size: cover;
     background-blend-mode: overlay;

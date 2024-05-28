@@ -5,7 +5,7 @@ const ClientQuestion = () => {
         <div>
             <section className="mt-8 lg:mt-28 max-w-[1240px] mx-auto">
                 <div
-                    className="text-center mt-8 lg:m-0 space-y-5 py-12 border-dashed border-y-2">
+                    className="text-center mt-8 lg:m-0 space-y-5 py-12  ">
                     <h1 className="text-3xl lg:text-8xl font-bold font-Rancho">
                         Clients Question
                     </h1>

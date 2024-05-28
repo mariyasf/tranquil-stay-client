@@ -29,29 +29,35 @@ const Navbar = () => {
     }
 
     const navLinks = <>
-        <li> <NavLink to={'/'}>Home</NavLink> </li>
-        <li> <NavLink to={'/aboutUs'}>About</NavLink> </li>
-        <li> <NavLink to={'/contactUs'}>Contact</NavLink> </li>
-        {/* <li> <NavLink to={'/rooms'}>Rooms</NavLink> </li> */}
+        <li> <NavLink className={({ isActive }) => isActive ? "font-bold text-[#d8ad5d] underline" : "font-bold text-white"} to={'/'}>Home</NavLink> </li>
+        <li> <NavLink className={({ isActive }) => isActive ? "font-bold text-[#d8ad5d] underline" : "font-bold text-white"} to={'/aboutUs'}>About</NavLink> </li>
+        <li> <NavLink className={({ isActive }) => isActive ? "font-bold text-[#d8ad5d] underline" : "font-bold text-white"} to={'/contactUs'}>Contact</NavLink> </li>
+
         <li>
             <details >
-                <summary>Rooms</summary>
+                <summary className="font-bold text-white">Rooms</summary>
                 <ul className="p-2 bg-[#000e0e] z-20">
-                    <li> <NavLink to={'/gallery'}>Gallery</NavLink> </li>
-                    <li> <NavLink to={'/rooms'}>Rooms</NavLink> </li>
+                    <li> <NavLink
+                        className={({ isActive }) => isActive ? "font-bold text-[#d8ad5d]" : "font-bold text-white"}
+                        to={'/gallery'}>Gallery</NavLink> </li>
+                    <li> <NavLink
+                        className={({ isActive }) => isActive ? "font-bold text-[#d8ad5d]" : "font-bold text-white"}
+                        to={'/rooms'}>Rooms</NavLink> </li>
                 </ul>
             </details>
 
         </li>
 
-        <li> <NavLink to={'/myBookings'}>My Bookings</NavLink> </li>
+        <li> <NavLink className={({ isActive }) =>
+            isActive ? "font-bold text-[#d8ad5d]" : "font-bold text-white"}
+            to={'/myBookings'}>My Bookings</NavLink> </li>
 
     </>
     return (
 
         <div className="bg-[#000e0e] border-b-[#c09d73] border-b-2">
-            <div className="max-w-[1240px] mx-auto  navbar     text-white lg:px-20 
-            font-Poppins py-10 ">
+            <div className="max-w-[1240px] mx-auto  navbar     text-white  
+            font-Poppins py-5 ">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -69,7 +75,7 @@ const Navbar = () => {
                     </a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1   ">
+                    <ul className="menu menu-horizontal px-1">
                         {navLinks}
                     </ul>
                 </div>

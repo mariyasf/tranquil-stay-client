@@ -13,6 +13,11 @@
     color: #d8ad5d
 }
 
+.active {
+    color: #c09d73;
+    font-weight: bold;
+}
+
 .custom-bg {
     background-image: url('/Images/b2.jpg'), linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgb(112, 112, 130) 100%);
     background-repeat: no-repeat;

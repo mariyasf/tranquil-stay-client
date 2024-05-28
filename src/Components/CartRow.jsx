@@ -23,6 +23,7 @@ const CartRow = ({ booking, onDelete }) => {
         bookingPricePerNight,
     } = booking
     const Imgicon = img[0];
+    console.log(img)
 
     const handleDelete = async () => {
         try {
@@ -72,7 +73,7 @@ const CartRow = ({ booking, onDelete }) => {
                 <Link to={`/rooms/${bookingId}`}>
                     <div className="flex items-center gap-x-2">
                         <img className="object-cover w-8 h-8 rounded-full"
-                            src={Imgicon} alt="" />
+                            src={img} alt="" />
                         <div>
                             <h2 className="text-sm font-medium text-gray-800 dark:text-white ">{bookingRoomTypes}</h2>
                             <p className="text-xs font-normal text-gray-600 dark:text-gray-400">{bookingCategory}</p>

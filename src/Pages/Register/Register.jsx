@@ -12,7 +12,7 @@ const Register = () => {
 
     const [showPass, setShowPass] = useState(false);
 
-    const handleRegister = (e) => {
+    const handleRegister = async (e) => {
         e.preventDefault();
 
         const form = new FormData(e.currentTarget);
@@ -42,46 +42,77 @@ const Register = () => {
         if (!termsAC) {
             return toast.error('Please accept our terms and conditions');
         }
+        try {
+            const result = createNewUser(email, password)
+            console.log(result);
 
+            toast.success('Registration successful! You can now log in.');
 
-        // create new User
-        createNewUser(email, password)
-            .then(result => {
-                // console.log(result.user);
-                toast.success('Registration successful! You can now log in.');
+            updateUserProfile(name, photo, phoneNumber)
+                .then()
+                .catch()
 
-                // Update Profile
-                updateUserProfile(name, photo, phoneNumber)
-                    .then()
-                    .catch()
-
-                const createdAt = result.user?.metadata?.creationTime;
-                const user = { name, email, createAt: createdAt };
-                fetch(`${import.meta.env.VITE_API_URL}/user`, {
-                    method: 'POST',
-                    headers: {
-                        'content-type': 'application/json'
-                    },
-                    body: JSON.stringify(user)
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        // console.log(data);
-                        if (data.insertedId) {
-                            console.log('Register user')
-                        }
-                    })
-                e.target.reset();
-
+            const createdAt = result.user?.metadata?.creationTime;
+            const user = { name, email, createAt: createdAt };
+            fetch(`${import.meta.env.VITE_API_URL}/user`, {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(user)
             })
-            .catch(error => {
-                console.error(error);
-                toast.error('Registration failed. Please try again later.');
-            });
+                .then(res => res.json())
+                .then(data => {
+                    // console.log(data);
+                    if (data.insertedId) {
+                        console.log('Register user')
+                    }
+                })
+            e.target.reset();
+
+        }
+        catch (error) {
+            console.error(error);
+            toast.error('Registration failed. Please try again later.');
+        }
+        // create new User
+        // createNewUser(email, password)
+        //     .then(result => {
+        //         // console.log(result.user);
+        //         toast.success('Registration successful! You can now log in.');
+
+        //         // Update Profile
+        //         updateUserProfile(name, photo, phoneNumber)
+        //             .then()
+        //             .catch()
+
+        //         const createdAt = result.user?.metadata?.creationTime;
+        //         const user = { name, email, createAt: createdAt };
+        //         fetch(`${import.meta.env.VITE_API_URL}/user`, {
+        //             method: 'POST',
+        //             headers: {
+        //                 'content-type': 'application/json'
+        //             },
+        //             body: JSON.stringify(user)
+        //         })
+        //             .then(res => res.json())
+        //             .then(data => {
+        //                 // console.log(data);
+        //                 if (data.insertedId) {
+        //                     console.log('Register user')
+        //                 }
+        //             })
+        //         e.target.reset();
+
+        //     })
+        //     .catch(error => {
+        //         console.error(error);
+        //         toast.error('Registration failed. Please try again later.');
+        //     });
     }
 
     return (
-        <div className="bg-[#f6f5f5] mt-32">
+        <div className="bg-[#f6f5f5] ">
             <Helmet>
                 <title>Registration</title>
             </Helmet>

@@ -1,27 +1,31 @@
-
 import UseAuth from "../../Hooks/UseAuth";
 import { useEffect, useState } from "react";
 import CartRow from "../../Components/CartRow";
 import { Helmet } from "react-helmet";
+import UseAxiosSecure from "../../Hooks/UseAxiosSecure";
 
 
 const MyCart = () => {
     const { user, loding } = UseAuth();
+    const axiosSecure = UseAxiosSecure()
 
     const [mybooking, setMyBooking] = useState([]);
 
 
     useEffect(() => {
-        fetch(`${import.meta.env.VITE_API_URL}/booking/${user?.email}`)
-            .then(result => result.json())
-            .then(data => {
-                // console.log(data);
-                const sortedBookings = data.sort((a, b) => new Date(a.checkIn) - new Date(b.checkIn));
-
-                setMyBooking(sortedBookings);
+        const bookData = async () => {
+            const { data } = await axiosSecure(
+                `/booking/${user?.email}`, {
             })
+            const sortedBookings = data.sort((a, b) => new Date(a.checkIn) - new Date(b.checkIn));
 
-    }, [user])
+            setMyBooking(sortedBookings);
+        }
+        bookData();
+
+
+
+    }, [user, axiosSecure])
 
     if (loding) {
         return <div className="text-center">
@@ -105,7 +109,7 @@ const MyCart = () => {
                     </div>
                 </div>
 
-                 
+
             </section>
         </div>
     );

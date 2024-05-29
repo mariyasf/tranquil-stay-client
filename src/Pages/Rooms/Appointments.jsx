@@ -1,17 +1,15 @@
 import axios from "axios";
-import { useState } from "react";
-import { FaCheckCircle, FaUsers } from "react-icons/fa";
-import { FaPersonWalkingLuggage } from "react-icons/fa6";
-import { IoIosCloseCircleOutline } from "react-icons/io";
 import { MdRoomService } from "react-icons/md";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 import UseAuth from "../../Hooks/UseAuth";
 import { Helmet } from "react-helmet";
+import UseAxiosSecure from "../../Hooks/UseAxiosSecure";
 
 
 const Appointments = () => {
     const booking = useLoaderData();
+    const axiosSecure = UseAxiosSecure()
     // console.log(booking)
 
     const { user } = UseAuth()
@@ -45,8 +43,8 @@ const Appointments = () => {
         // console.log(newUpdate);
 
         try {
-            const response = await axios
-                .patch(`${import.meta.env.VITE_API_URL}/booking/${_id}`, newUpdate);
+            const response = await axiosSecure
+                .patch(`/booking/${_id}`, newUpdate);
 
             if (response.status === 200) {
                 Swal.fire({

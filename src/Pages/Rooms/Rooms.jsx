@@ -12,7 +12,7 @@ const Rooms = () => {
             <Helmet>
                 <title>Rooms</title>
             </Helmet>
-            
+
             <BannerCard
                 path={"home/rooms"}
                 title={"ROOMS & SUTTES"} />

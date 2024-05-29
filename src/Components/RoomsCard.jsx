@@ -3,10 +3,8 @@ import UseAnimation from "../Hooks/UseAnimation";
 import { useEffect, useState } from "react";
 
 
-const RoomsCard = ({ room, sortBy }) => {
+const RoomsCard = ({ room }) => {
     UseAnimation()
-
-    // console.log(room)
     const {
         _id,
         availability,
@@ -16,20 +14,9 @@ const RoomsCard = ({ room, sortBy }) => {
         pricePerNight,
         roomSize,
         roomImages
-    } = room || {}
+    } = room || {};
+    const img = roomImages ? roomImages[0] : "";
 
-    const img = roomImages[0];
-    const [sortedData, setSortedData] = useState([]);
-
-    useEffect(() => {
-
-
-        if (sortBy === "price") {
-            room.sort((a, b) => b.pricePerNight - a.pricePerNight);
-        }
-        setSortedData(room);
-
-    }, [sortBy,room]);
 
     return (
         <div

@@ -1,24 +1,26 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import BannerCard from "../Pages/Shared/BannerCard";
 import SwipperImg from "./SwipperImg";
-import { FaMattressPillow, FaPersonWalkingLuggage, FaRightFromBracket } from "react-icons/fa6";
+import { FaMattressPillow } from "react-icons/fa6";
 import { MdBreakfastDining, MdCoffeeMaker, MdOutlinePool, MdRoomService } from "react-icons/md";
 import { FaArrowCircleLeft, FaArrowCircleRight, FaCheck, FaCheckCircle, FaUsers, FaWifi } from "react-icons/fa";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import { PiTelevisionSimpleFill } from "react-icons/pi";
 import { CgGym } from "react-icons/cg";
-import axios from "axios";
 import Swal from "sweetalert2";
 import UseAuth from "../Hooks/UseAuth";
 import UseAnimation from "../Hooks/UseAnimation";
 import Feedbacks from "../Pages/CustomerFeedback/Feedbacks";
 import { Helmet } from "react-helmet";
+import UseAxiosSecure from "../Hooks/UseAxiosSecure";
 
 const RoomDetails = () => {
     UseAnimation()
     const { user, loding } = UseAuth();
+    const axiosSecure = UseAxiosSecure();
 
     const room = useLoaderData();
+
     const {
         _id,
         description,
@@ -81,9 +83,10 @@ const RoomDetails = () => {
         console.table(booking)
 
         try {
-            const { data } = await axios.post(
-                `${import.meta.env.VITE_API_URL}/booking`,
+            const { data } = await axiosSecure.post(
+                `/booking`,
                 booking)
+
             // console.log(data);
             if (data.insertedId) {
                 Swal.fire({

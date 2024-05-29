@@ -1,49 +1,71 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import UseAuth from "../../Hooks/UseAuth";
-import { FaGoogle } from "react-icons/fa";
 import { Helmet } from "react-helmet";
+import UseAxiosSecure from "../../Hooks/UseAxiosSecure";
 
 
 const Login = () => {
     const { signIn, handleGoogleSignIn } = UseAuth();
-
+    const axiosSecure = UseAxiosSecure()
     const location = useLocation();
     const navigate = useNavigate();
 
-    const handleLogin = e => {
+    const handleLogin = async e => {
         e.preventDefault();
 
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
         // console.log(email, password)
+        try {
+            const result = await signIn(email, password)
 
-        signIn(email, password)
-            .then(result => {
-                const user = result.user;
-                // console.log(user);
-                navigate(location?.state ? location.state : '/')
-            })
-            .catch(error => console.log(error));
+            // console.log(result.user)
+            const { data } = await axiosSecure.post(`/jwt`,
+                {
+                    email: result?.user?.email
+                },
+
+
+            )
+            console.log(data)
+
+            // NAvigate after login
+            navigate(location?.state ? location.state : '/')
+        }
+        catch (error) {
+            console.error(error);
+        }
+
+
+
 
     }
 
-    const handleGoogle = () => {
+    const handleGoogle = async () => {
         console.log("YES");
+        try {
+            const result = await handleGoogleSignIn()
 
-        handleGoogleSignIn()
-            .then(result => {
-                console.log(result.user)
-                // NAvigate after login
-                navigate(location?.state ? location.state : '/')
-            })
-            .catch(error => {
-                console.error(error);
-            })
+            // console.log(result.user)
+            const { data } = await axiosSecure.post(`/jwt`,
+                {
+                    email: result?.user?.email
+                },
+
+
+            )
+
+            // NAvigate after login
+            navigate(location?.state ? location.state : '/')
+        }
+        catch (error) {
+            console.error(error);
+        }
 
     }
     return (
-        <div className="hero min-h-screen bg-[#f6f5f5] mt-32">
+        <div className="hero min-h-screen bg-[#f6f5f5]">
             <Helmet>
                 <title>Login</title>
             </Helmet>

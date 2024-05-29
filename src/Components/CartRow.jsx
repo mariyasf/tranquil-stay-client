@@ -1,13 +1,14 @@
 
-import axios from 'axios';
 import { FaEdit } from 'react-icons/fa';
 import { MdDelete } from 'react-icons/md';
 import { VscFeedback } from 'react-icons/vsc';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import UseAxiosSecure from '../Hooks/UseAxiosSecure';
 
 const CartRow = ({ booking, onDelete }) => {
 
+    const axiosSecure = UseAxiosSecure();
 
 
     const {
@@ -32,8 +33,8 @@ const CartRow = ({ booking, onDelete }) => {
             cancellationDate.setDate(cancellationDate.getDate() - 1);
 
             if (today < cancellationDate) {
-                const response = await axios
-                    .delete(`${import.meta.env.VITE_API_URL}/booking/${booking._id}`);
+                const response = await axiosSecure
+                    .delete(`/booking/${booking._id}`);
                 if (response.status === 200) {
                     onDelete(booking._id);
 

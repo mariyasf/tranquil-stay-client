@@ -13,11 +13,11 @@ const UseAxiosSecure = () => {
 
     axiosSecure.interceptors.response.use(
         res => {
-            console.log('response app e ashr age ami thamiye dekhechi ki ache er bitor', res)
+            // console.log('response app e ashr age ami thamiye dekhechi ki ache er bitor', res)
             return res;
         },
         async err => {
-            console.log(err.response)
+            // console.log(err.response)
             if (err.response.status === 401 || err.response.status === 403) {
                 await logout();
                 navigate('/login')

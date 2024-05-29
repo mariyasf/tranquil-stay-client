@@ -24,7 +24,7 @@ const CartRow = ({ booking, onDelete }) => {
         bookingPricePerNight,
     } = booking
     const Imgicon = img[0];
-    console.log(img)
+    // console.log(img)
 
     const handleDelete = async () => {
         try {

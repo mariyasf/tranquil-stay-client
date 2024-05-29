@@ -9,7 +9,6 @@ Tranquil Stay is a modern, user-centric hotel booking platform designed to provi
 - **Frontend**: HTML, CSS, JavaScript, React.js
 - **Backend**: Node.js, Express.js, MongoDB
 - **Authentication**: Firebase, JWT
-- **Data Management**: Tanstack Query
 
 
 ## Features

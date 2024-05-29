@@ -11,7 +11,7 @@ const CustomerFeedback = () => {
     const { bookingId } = useParams();
 
     const [rating, setRating] = useState(1);
-    console.log(bookingId)
+    // console.log(bookingId)
 
     if (loding) {
         return <div className="text-center">

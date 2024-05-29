@@ -28,7 +28,7 @@ const Login = () => {
 
 
             )
-            console.log(data)
+            // console.log(data)
 
             // NAvigate after login
             navigate(location?.state ? location.state : '/')

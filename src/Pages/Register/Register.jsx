@@ -44,7 +44,7 @@ const Register = () => {
         }
         try {
             const result = createNewUser(email, password)
-            console.log(result);
+            // console.log(result);
 
             toast.success('Registration successful! You can now log in.');
 

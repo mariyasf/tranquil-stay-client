@@ -15,9 +15,7 @@ const LoadingSpinner = ({ loading }) => {
                     <BounceLoader
                         color={"#d8ad5d"}
                         loading={loading}
-                        size={50}
-                    // aria-label="Loading Spinner"
-                    // data-testid="loader"
+                        size={50} 
                     />
                 </div>
 
@@ -25,9 +23,7 @@ const LoadingSpinner = ({ loading }) => {
                     <BounceLoader
                         color={"#c09d73"}
                         loading={loading}
-                        size={150}
-                    // aria-label="Loading Spinner"
-                    // data-testid="loader"
+                        size={150} 
                     />
 
                 </div>

@@ -13,7 +13,7 @@ const Banner = () => {
             bg-cover bg-center flex flex-col items-center">
 
                 <div className="text-center text-white py-20 space-y-10"
-                    data-aos="zoom-out" data-aos-anchor-placement="top-center"
+                    
 
                 >
                     <p className="flex justify-center gap-2 text-center text-[#eca753]">

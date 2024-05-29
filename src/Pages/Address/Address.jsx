@@ -11,8 +11,7 @@ const Address = () => {
     return (
         <div>
             <div className='bg-[#d8ad5d] py-20 w-full'
-                // data-aos="zoom-out"
-                // data-aos-offset="500"
+               
             >
                 <iframe
                     className='w-full'
@@ -32,7 +31,7 @@ const Address = () => {
                 <div
                     className='bg-[#011515] '>
                     <div className='lg:max-w-[1240px] mx-auto text-white flex flex-col lg:flex-row gap-10 px-10'>
-                        <div data-aos="zoom-out"
+                        <div 
                             className='p-5 bg-[#000e0e] shadow-2xl shadow-slate-800-400 -mt-10 pt-20'>
                             <h2 className='font-Cormorrant text-5xl font-bold'>Contact Info</h2>
                             <div className="flex items-center gap-5 pt-5 font-Cormorrant">
@@ -67,7 +66,7 @@ const Address = () => {
                                 <FaLinkedin className='hover:text-[#d8ad5d]' />
                             </div>
                         </div>
-                        <div data-aos="zoom-out" className='flex-1 pt-10'>
+                        <div  className='flex-1 pt-10'>
                             <div className='grid grid-cols-1 lg:grid-cols-3 gap-5  font-Cormorrant p-5'>
                                 <div>
                                     <h2 className=' text-white text-2xl uppercase pb-10'>Useful Links</h2>

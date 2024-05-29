@@ -9,8 +9,7 @@ const About = () => {
 
                 <h2 className="text-3xl font-Rancho text-[#eca753] italic  text-center pt-20">Special Moments</h2>
                 <h2 className="text-8xl font-Rancho font-bold text-center pt-5">About Us</h2>
-                <div
-                    data-aos="zoom-out" 
+                <div 
 
                     className="flex flex-col lg:flex-row  gap-0  p-10 content-center">
                     <div

@@ -145,10 +145,10 @@ const RoomDetails = () => {
 
                     <div className="mx-10 lg:mx-0  space-y-5 ">
                         <h2 className="text-5xl font-bold">{roomTypes}</h2>
-                        <p data-aos="fade-up" data-aos-delay="1200" className="text-2xl">{description}</p>
+                        <p  className="text-2xl">{description}</p>
                     </div>
 
-                    <div data-aos="fade-up" data-aos-delay="1200" className="flex flex-col lg:flex-row gap-5 justify-between mx-10 lg:mx-0 mt-5">
+                    <div  className="flex flex-col lg:flex-row gap-5 justify-between mx-10 lg:mx-0 mt-5">
                         <div className="space-y-2">
                             <h2 className="flex gap-4 font-bold text-3xl items-center">
                                 <FaArrowCircleRight />
@@ -177,7 +177,7 @@ const RoomDetails = () => {
 
 
 
-                    <div data-aos="fade-up" data-aos-delay="1200" className="space-y-4 mt-5 mx-10 lg:mx-0">
+                    <div  className="space-y-4 mt-5 mx-10 lg:mx-0">
                         <h2 className="font-bold text-3xl">Childreen & Extra Beds</h2>
                         <p className="text-2xl">
                             For a hotel or accommodation service, providing features related to children and extra beds is essential to cater to the needs of families and larger groups.

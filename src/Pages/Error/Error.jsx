@@ -3,7 +3,12 @@
 const Error = () => {
     return (
         <div>
-            error
+            <div className="text-center">
+                
+                <img className="mx-auto"
+                    src="/Images/error.jpg" alt="" />
+                
+            </div>
         </div>
     );
 };

@@ -1,20 +1,22 @@
-import { IoIosBed } from "react-icons/io";
+import promo from "/videos/promo.mp4";
 
 
 const Experience = () => {
     return (
         <div>
-            <div className="max-w-[1240px] mx-auto px-10 lg:px-0 hero min-h-screen mb-10">
+            <div className="max-w-[1240px] mx-auto px-10 lg:px-0 hero min-h-screen">
                 <div className="hero-content flex flex-col lg:flex-row gap-10">
 
-                    <div className="lg:w-1/2 relative ">
-                        <img className="w-3/4 rounded-lg shadow-2xl"
-                            src="/Images/c2.jpg" alt="" />
-                        <img className="w-2/3 absolute top-20 right-10 border-8
-                         border-white rounded-lg shadow-2xl"
-                            src="/Images/c.jpg" alt="" />
+                    <div className='flex-1 w-full h-full'>
+                        <video
+                            className='w-full h-full  '
+                            autoPlay
+                            loop
+                            muted
+                            src={promo}
+                        ></video>
                     </div>
-                    <div className='lg:w-1/2 space-y-5 pt-32 lg:pt-0 lg:p-4 '>
+                    <div className='flex-1 space-y-5  lg:p-4 '>
                         <h2 className='text-3xl text-[#eca753] font-bold font-Rancho italic'>You'll Remember</h2>
                         <h1 className="text-3xl lg:text-7xl font-bold font-Rancho ">
                             The Luxury Experience

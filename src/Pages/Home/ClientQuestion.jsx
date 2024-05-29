@@ -3,9 +3,9 @@ import React from 'react';
 const ClientQuestion = () => {
     return (
         <div>
-            <section className="mt-8 lg:mt-28 max-w-[1240px] mx-auto">
+            <section className="mt-10 max-w-[1240px] mx-auto">
                 <div
-                    className="text-center mt-8 lg:m-0 space-y-5 py-12  ">
+                    className="text-center  space-y-5 ">
                     <h1 className="text-3xl lg:text-8xl font-bold font-Rancho">
                         Clients Question
                     </h1>

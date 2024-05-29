@@ -11,9 +11,7 @@ const RoomsCategories = () => {
 
     useEffect(() => {
         const getData = async () => {
-            const { data } = await axios(`${import.meta.env.VITE_API_URL}/rooms`, {
-                withCredentials: true,
-            })
+            const { data } = await axios(`${import.meta.env.VITE_API_URL}/rooms`,)
             setRooms(data)
         }
         getData()

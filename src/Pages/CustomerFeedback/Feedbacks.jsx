@@ -23,7 +23,7 @@ const Feedbacks = ({ feedUrl }) => {
         fetch(feedUrl)
             .then(res => res.json())
             .then(data => {
-                // console.log(data);
+                console.log(data);
                 setReviews(data);
             })
             .catch(error => {
@@ -31,7 +31,7 @@ const Feedbacks = ({ feedUrl }) => {
             });
     }, [feedUrl]);
 
-    // console.log(reviews)
+    console.log(reviews)
     if (loding) {
         return <div className="text-center">
             <span className="loading loading-ring loading-lg"></span>

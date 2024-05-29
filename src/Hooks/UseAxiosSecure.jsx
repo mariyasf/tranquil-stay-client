@@ -16,14 +16,14 @@ const UseAxiosSecure = () => {
             // console.log('response app e ashr age ami thamiye dekhechi ki ache er bitor', res)
             return res;
         },
-        async err => {
+        async error => {
             // console.log(err.response)
-            if (err.response.status === 401 || err.response.status === 403) {
+            if (error.response && (error.response.status === 401 || error.response.status === 403)) {
                 await logout();
-                navigate('/login')
+                navigate('/login');
             }
 
-            return Promise.reject(err)
+            return Promise.reject(error)
         }
 
     )

@@ -12,7 +12,9 @@ import 'swiper/css/navigation';
 import { Pagination, Navigation } from 'swiper/modules';
 
 const SwipperImg = ({ roomImages }) => {
-    // console.log(roomImages);
+    if (!roomImages || roomImages.length === 0) {
+        return <div className='text-center'>No images available</div>;
+    }
 
     return (
         <div>

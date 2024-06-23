@@ -1,8 +1,8 @@
-# Habitat
+# Tranquil Stay
 
 [Live Link] (https://tranquil-stay.web.app/)
 
-### About Habitat:
+### About Tranquil Stay:
 Tranquil Stay is a modern, user-centric hotel booking platform designed to provide a seamless and intuitive booking experience. This project involves the full-stack development of the platform, ensuring robust functionality across all devices.
 
 ### Technologies Used:
